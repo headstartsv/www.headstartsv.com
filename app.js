@@ -1,18 +1,14 @@
 
 
-var express = require('express'),
+const express = require('express'),
   config = require('./config/config'),
   glob = require('glob'),
-  mongoose = require('mongoose');
+  dynamoose = require('dynamoose');
 
-mongoose.connect(config.db);
-var db = mongoose.connection;
-db.on('error', function () {
-  throw new Error('unable to connect to database at ' + config.db);
-});
+dynamoose.setDefaults(config.db);
+dynamoose.AWS.config.update(config.aws);
 
-var models = glob.sync(config.root + '/app/models/*.js');
-models.forEach(function (model) {
+glob.sync(config.root + '/app/models/*.js').forEach(function (model) {
   require(model);
 });
 var app = express();

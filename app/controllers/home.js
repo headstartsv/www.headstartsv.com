@@ -1,18 +1,30 @@
-var express = require('express'),
+const express = require('express'),
   router = express.Router(),
-  mongoose = require('mongoose'),
-  Article = mongoose.model('Article');
+  Dog = require('../models/article');
+
+var odie = new Dog({
+  ownerId: 4,
+  name: 'Odie',
+  breed: 'Beagle',
+  color: ['Tan'],
+  cartoon: true
+});
+odie.save(function (err) {
+  if(err) { return console.log(err); }
+  console.log('Ta-da!');
+});
+
 
 module.exports = function (app) {
   app.use('/', router);
 };
 
 router.get('/', function (req, res, next) {
-  Article.find(function (err, articles) {
-    if (err) return next(err);
-    res.render('index', {
-      title: 'Generator-Express MVC',
-      articles: articles
-    });
-  });
+  // Article.find(function (err, articles) {
+  //   if (err) return next(err);
+  //   res.render('index', {
+  //     title: 'Generator-Express MVC',
+  //     articles: articles
+  //   });
+  // });
 });
