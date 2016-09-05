@@ -27,4 +27,10 @@ router.get('/', function (req, res, next) {
   //     articles: articles
   //   });
   // });
+  res.render('index', {
+      title: 'Generator-Express MVC',
+      articles: {
+        title: 'Head Start SV Home'
+      }
+    });
 });

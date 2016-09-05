@@ -1,6 +1,7 @@
 const express = require('express'),
   router = express.Router(),
   passport = require('passport'),
+  LocalStrategy = require('passport-local').Strategy,
   FacebookStrategy = require('passport-facebook').Strategy,
   NaverStrategy = require('passport-naver').Strategy;
 
@@ -17,7 +18,26 @@ passport.deserializeUser(function(obj, done) {
   done(null, obj);
 });
 
-var naverStrategy = new NaverStrategy({
+passport.use(new LocalStrategy({
+    usernameField: 'email',
+    passwordField: 'passwd',
+    session: true
+  },
+  function(username, password, done) {
+    // User.findOne({ username: username }, function (err, user) {
+    //   if (err) { return done(err); }
+    //   if (!user) { return done(null, false); }
+    //   if (!user.verifyPassword(password)) { return done(null, false); }
+    //   return done(null, user);
+    // });
+    console.log('local sign in : ' + username + ', ' + password);
+    return done(null, {
+      user: 'a-mock-test-user'
+    });
+  }
+));
+
+passport.use(new NaverStrategy({
     clientID: 'b_V1ta71LrxKVBMWMGUF',
     clientSecret: 'KIoNKRK6te',
     callbackURL: 'http://localhost:3000/auth/naver/callback'
@@ -28,7 +48,7 @@ var naverStrategy = new NaverStrategy({
       console.log(accessToken);
       console.log(arguments);
       // return done('asdfasdf', {'id': 'test-user'});
-      done(null, {
+      return done(null, {
         user: 'a-mock-test-user'
       });
     });
@@ -52,26 +72,30 @@ var naverStrategy = new NaverStrategy({
     //   }
     // });
   }
-);
+));
 
-var facebookStrategy = new FacebookStrategy({
+passport.use(new FacebookStrategy({
     clientID: '1263439097023233',
     clientSecret: '339206f287ebe507a6b7a13aa8b50b2c',
     callbackURL: "http://localhost:3000/auth/facebook/callback"
   },
-  function(accessToken, refreshToken, profile, cb) {
+  function(accessToken, refreshToken, profile, done) {
     // User.findOrCreate({ facebookId: profile.id }, function (err, user) {
     //   return cb(err, user);
     // });
     console.log(arguments);
-    cb(null, {
+    return done(null, {
       user: 'a-mock-test-user'
     })
   }
-);
-passport.use(naverStrategy);
+));
 
-passport.use(facebookStrategy);
+
+router.post('/hssv',
+  passport.authenticate('local', { failureRedirect: '/signinfail' }),
+  function(req, res) {
+    res.redirect('/');
+  });
 
 router.get('/naver', passport.authenticate('naver', {
   failureRedirect: 'auth/login'

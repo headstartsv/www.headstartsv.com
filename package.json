@@ -19,6 +19,7 @@
     "morgan": "^1.6.1",
     "passport": "^0.3.2",
     "passport-facebook": "^2.1.1",
+    "passport-local": "^1.0.0",
     "passport-naver": "git://github.com/naver/passport-naver#601b805c77a0cda5e8a4cbf7df2b91fc515fbb59",
     "serve-favicon": "^2.3.0"
   },
