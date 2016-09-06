@@ -27,8 +27,17 @@ router.get('/', function (req, res, next) {
   //     articles: articles
   //   });
   // });
-  res.render('index', {
-      title: 'Generator-Express MVC',
+  // res.render('index', {
+  //     title: 'Generator-Express MVC',
+  //     articles: {
+  //       title: 'Head Start SV Home'
+  //     }
+  //   });
+  res.sendFile(path.join(__dirname + '../../public/'));
+});
+router.get('/test.js', function (req, res, next) {
+  res.render('test', {
+      message: 'Generator-Express MVC',
       articles: {
         title: 'Head Start SV Home'
       }
