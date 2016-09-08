@@ -151,8 +151,8 @@
     body {
       color: #ffffff;
     }
-    .main-menu {
-
+    .main-menu a {
+      color: #ffffff;
     }
     .main-menu .wide {
       margin: 20px auto auto auto;
@@ -329,8 +329,57 @@
       padding: 20px 0px 20px 0px;
     }
   </style>
+  <style>
+    .drawer-heading img {
+      width: 100px;
+      border-radius: 50%;
+    }
+    .drawer-heading .profile {
+      padding: 15px;
+      line-height: 20px;
+    }
+  </style>
+  <script>
+    $(function () {
+      $('.drawer-nav > li > a').click(function () {
+        $('#drawer').drawer('hide');
+      });
+    });
+  </script>
 </head>
 <body class="has-drawer">
+<!-- drawer start -->
+<div id="drawer" class="drawer dw-xs-10 dw-sm-6 dw-md-4 fold" aria-labelledby="drawer">
+  <div class="drawer-contents">
+    <div class="drawer-heading row">
+      <div class="col-xs-5">
+        <img src="img/instructor-03.png">
+      </div>
+      <div class="col-xs-7">
+        <div class="profile">
+          <b>Ryan Koo</b>
+        </div>
+        <div class="profile">
+          info@headstartsv.com
+        </div>
+      </div>
+    </div>
+    <ul class="drawer-nav">
+      <li role="presentation" class="active"><a href="/">Home</a></li>
+      <li role="presentation"><a href="/bootcamp">Bootcamp</a></li>
+      <li role="presentation"><a href="/precourse">Pre-Course</a></li>
+      <li role="presentation"><a href="/events">Events</a></li>
+      <li role="presentation"><a href="/alumni">Alumni</a></li>
+      <li role="presentation"><a href="#instructor">Team</a></li>
+      <li role="presentation"><a href="#contacts">Contacts</a></li>
+    </ul>
+    <div class="drawer-footer">
+      <small>Headstart Silicon Valley, Inc, &copy; 2016</small>
+    </div>
+  </div>
+</div>
+<!-- drawer end -->
+
 <!-- BACK GROUND -->
 <div id="backgroundVideo">
   <!-- BACKGROUND VIDEO FALLBACK -->
@@ -344,42 +393,17 @@
     <source src="img/background-video.ogv" type="video/ogg"/>
   </video>
   <!-- <![endif]-->
-
   <div class="video-glass"></div>
 </div>
-<!-- drawer start -->
-<div id="drawer" class="drawer dw-xs-10 dw-sm-6 dw-md-4 fold" aria-labelledby="drawer">
-  <div class="drawer-controls">
-    <a href="#drawer" data-toggle="drawer" aria-foldedopen="false" aria-controls="drawer" class="btn btn-primary btn-sm">Menu</a>
-  </div>
-  <div class="drawer-contents">
-    <div class="drawer-heading">
-      <img src="img/instructor-03.png">
-      <span>Ryan Koo</span>
-      <span>info@headstartsv.com</span>
-    </div>
-    <ul class="drawer-nav">
-      <li role="presentation" class="active"><a href="#">Home</a></li>
-      <li role="presentation"><a href="#">Bootcamp</a></li>
-      <li role="presentation"><a href="#">Pre-Course</a></li>
-      <li role="presentation"><a href="#">Events</a></li>
-      <li role="presentation"><a href="#">Alumni</a></li>
-      <li role="presentation"><a href="#">Team</a></li>
-      <li role="presentation"><a href="#">Contacts</a></li>
-    </ul>
-    <div class="drawer-footer">
-      <small>Headstart Silicon Valley, Inc, &copy; 2016</small>
-    </div>
-  </div>
-</div>
-<!-- drawer end -->
 
 <!-- COMMON TOP MENU -->
 <nav class="main-menu">
   <!-- MOBILE TOP MENU -->
   <div class="narrow visible-xs-block visible-sm-block">
     <span class="col-sm-4 col-xs-4">
-      <span class="glyphicon glyphicon-th" aria-hidden="true"></span>
+      <a href="#drawer" data-toggle="drawer" aria-foldedopen="false" aria-controls="drawer">
+        <span class="glyphicon glyphicon-th" aria-hidden="true"></span>
+      </a>
     </span>
     <span class="col-sm-4 col-xs-4">
       <img class="logo" src="img/logo.png">
@@ -391,17 +415,43 @@
   <!-- DESKTOP TOP MENU -->
   <div class="wide visible-md-block visible-lg-block container">
     <div class="col-md-5">
-      <span class="col-md-3">Bootcamp</span>
-      <span class="col-md-3">Courses</span>
-      <span class="col-md-3">Events</span>
-      <span class="col-md-3">Alumni</span>
+      <span class="col-md-3">
+        <a href="/bootcamp">
+          Bootcamp
+        </a>
+      </span>
+      <span class="col-md-3">
+        <a href="/precourse">
+          PreCourse
+        </a>
+      </span>
+      <span class="col-md-3">
+        <a href="/events">
+          Events
+        </a>
+      </span>
+      <span class="col-md-3">
+        <a href="/alumni">
+          Alumni
+        </a>
+      </span>
     </div>
     <div class="col-md-2">
-      <img class="logo" src="img/logo.png">
+      <a href="/">
+        <img class="logo" src="img/logo.png">
+      </a>
     </div>
     <div class="col-md-5">
-      <span class="col-md-3">Team</span>
-      <span class="col-md-3">Contacts</span>
+      <span class="col-md-3">
+        <a href="#instructor">
+          Team
+        </a>
+      </span>
+      <span class="col-md-3">
+        <a href="#contacts">
+          Contacts
+        </a>
+      </span>
       <span class="col-md-3"></span>
       <span class="col-md-3">SignIn</span>
     </div>
@@ -506,7 +556,7 @@
     </section>
   </article>
   <!-- INSTRUCTOR -->
-  <article class="instructor container">
+  <article id="instructor" class="instructor container">
     <h1>INSTRUCTOR</h1>
     <div class="row">
       <figure class="col-md-3">
@@ -524,7 +574,7 @@
     </div>
   </article>
   <!-- CONTACTS -->
-  <article class="contacts">
+  <article id="contacts" class="contacts">
     <div class="container">
       <section class="col-md-5">
         <h3>CONTACTS</h3>
