@@ -109,14 +109,14 @@
       top: 0px;
       left: 0px;
       width: 100%;
-      max-height: 650px;
+      /*max-height: 650px;*/
       z-index: -1;
       overflow: hidden;
     }
     #backgroundVideo img {
       width: 100%;
       height: auto;
-      min-height: 650px;
+      /*min-height: 650px;*/
       min-width: 1250px;
     }
     .video-glass {
@@ -131,7 +131,7 @@
       width: 100%;
       height: 100%;
       min-width: 1250px;
-      min-height: 650px;
+      /*min-height: 650px;*/
     }
   </style>
   <!-- BACKGROUND VIDEO FALLBACK -->
@@ -151,28 +151,55 @@
     body {
       color: #ffffff;
     }
-    nav.main-menu {
-      margin-top: 20px;
+    .main-menu {
+
     }
-    nav.main-menu span {
+    .main-menu .wide {
+      margin: 20px auto auto auto;
+      height: 62px;
+    }
+    .main-menu .narrow {
+      height: 46px;
+      background-color: rgba(55,71,79,0.7);
+      font-size: 25px;
+    }
+    .main-menu > div > span {
       text-align: center;
+    }
+    .main-menu .narrow .glyphicon {
+      margin-top: 10px;
+    }
+    .main-menu .narrow > span {
+      height: 46px;
+      line-height: 46px;
+    }
+    .main-menu .wide span {
+      border-bottom: solid 1px #ffffff;
       height: 62px;
       line-height: 62px;
-      border-bottom: solid 1px #ffffff;
     }
-    nav.main-menu .logo {
-      width: 80px;
+    .main-menu .logo {
       display: block;
+    }
+    .main-menu .wide .logo {
+      width: 80px;
       margin: 15px auto auto auto;
+    }
+    .main-menu .narrow .logo {
+      width: 50px;
+      margin: 4px auto auto auto;
     }
   </style>
   <style>
     header {
       text-align: center;
-      height: 503px;
+      /*height: 503px;*/
     }
     header h3 {
       margin: 50px auto 50px auto;
+    }
+    header figure {
+      clear: both;
     }
     header figure img {
       display: block;
@@ -348,15 +375,21 @@
 <!-- drawer end -->
 
 <!-- COMMON TOP MENU -->
-<nav class="main-menu container">
+<nav class="main-menu">
   <!-- MOBILE TOP MENU -->
-  <div class="row visible-xs-block visible-sm-block">
-    <span class="col-sm-1 col-xs-1">menu</span>
-    <span class="col-sm-10 col-xs-10">logo</span>
-    <span class="col-sm-1 col-xs-1">SignIn</span>
+  <div class="narrow visible-xs-block visible-sm-block">
+    <span class="col-sm-4 col-xs-4">
+      <span class="glyphicon glyphicon-th" aria-hidden="true"></span>
+    </span>
+    <span class="col-sm-4 col-xs-4">
+      <img class="logo" src="img/logo.png">
+    </span>
+    <span class="col-sm-4 col-xs-4">
+      <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+    </span>
   </div>
   <!-- DESKTOP TOP MENU -->
-  <div class="row visible-md-block visible-lg-block">
+  <div class="wide visible-md-block visible-lg-block container">
     <div class="col-md-5">
       <span class="col-md-3">Bootcamp</span>
       <span class="col-md-3">Courses</span>
