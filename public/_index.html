@@ -34,76 +34,12 @@
   <!--[if !IE]><!-->
   <script src="components/bootstrap-drawer/dist/js/drawer.min.js"></script>
   <!--<![endif]-->
+  <script src="js/common.js"></script>
+  <link rel="stylesheet" type="text/css" href="/css/common.css" />
 
-  <script src="/index.js"></script>
 
   <style>
-    @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
-    * {
-      font-family: 'Nanum Gothic', sans-serif;
-    }
-    b {
-      font-weight: 900;
-    }
-    h1 {
-      line-height: 1.2em;
-      font-weight: 400;
-      font-size: 3em;
-      max-width: 700px;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      text-align: center;
-    }
-    h2 {
-      line-height: 1.3em;
-      font-weight: 400;
-      font-size: 2em;
-      max-width: 700px;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      text-align: center;
-    }
-    h3 {
-      line-height: 1.4em;
-      font-weight: 400;
-      font-size: 1.5em;
-      max-width: 700px;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      text-align: center;
-    }
-    h4 {
-      line-height: 1.5em;
-      font-weight: 400;
-      font-size: 1.2em;
-      max-width: 700px;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      text-align: center;
-    }
-    .btn-default {
-      color: #ffffff;
-      background-color: #26a69a;
-      border: none;
-      padding-left: 28px;
-      padding-right: 28px;
-    }
-    .btn-default:hover {
-      color: #ffffff;
-      background-color: #26a69a;
-      border: none;
-    }
-    .btn-default:focus {
-      color: #ffffff;
-      background-color: #26a69a;
-      border: none;
-    }
-  </style>
-  <style>
+    /* BACKGROUND VIDEO */
     #backgroundVideo {
       position: absolute;
       top: 0px;
@@ -133,64 +69,8 @@
       min-width: 1250px;
       /*min-height: 650px;*/
     }
-  </style>
-  <!-- BACKGROUND VIDEO FALLBACK -->
-  <!--[if lt IE 9]>
-  <style type="text/css">
-    .mejs-offscreen {
-      display: none !important;
-    }
-    .video-glass {
-      background:transparent;
-      filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F39AEA6,endColorstr=#7F39AEA6);
-      zoom: 1;
-    }
-  </style>
-  <![endif]-->
-  <style>
-    body {
-      color: #ffffff;
-    }
-    .main-menu a {
-      color: #ffffff;
-    }
-    .main-menu .wide {
-      margin: 20px auto auto auto;
-      height: 62px;
-    }
-    .main-menu .narrow {
-      height: 46px;
-      background-color: rgba(55,71,79,0.7);
-      font-size: 25px;
-    }
-    .main-menu > div > span {
-      text-align: center;
-    }
-    .main-menu .narrow .glyphicon {
-      margin-top: 10px;
-    }
-    .main-menu .narrow > span {
-      height: 46px;
-      line-height: 46px;
-    }
-    .main-menu .wide span {
-      border-bottom: solid 1px #ffffff;
-      height: 62px;
-      line-height: 62px;
-    }
-    .main-menu .logo {
-      display: block;
-    }
-    .main-menu .wide .logo {
-      width: 80px;
-      margin: 15px auto auto auto;
-    }
-    .main-menu .narrow .logo {
-      width: 50px;
-      margin: 4px auto auto auto;
-    }
-  </style>
-  <style>
+
+    /* HEADER */
     header {
       text-align: center;
       /*height: 503px;*/
@@ -207,8 +87,8 @@
       padding-top: 30px;
       width: 315px;
     }
-  </style>
-  <style>
+
+    /* CATCHPHRASE */
     .catchphrase {
       background-color: #37474f;
       padding-top: 30px;
@@ -220,8 +100,8 @@
     .catchphrase h3 {
       text-align: center;
     }
-  </style>
-  <style>
+
+    /* CUSTOMER */
     .customer {
       color: #000000;
       padding-top: 30px;
@@ -243,16 +123,16 @@
       text-align: center;
       color: #80cbc4;
     }
-  </style>
-  <style>
+
+    /* HOW IT WORKS */
     .howitworks {
       background-color: rgb(108, 169, 153);
     }
     .howitworks img {
       width: 100%;
     }
-  </style>
-  <style>
+
+    /* SERVICE */
     .service {
       background-color: #37474f;
     }
@@ -282,8 +162,8 @@
       display: block;
       margin: auto;
     }
-  </style>
-  <style>
+
+    /* INSTRUCTOR */
     .instructor {
       padding: 30px 0px 50px 0px;
     }
@@ -303,8 +183,8 @@
       display: block;
       margin: auto;
     }
-  </style>
-  <style>
+
+    /* CONTACTS */
     .contacts {
       color: #e0e0e0;
       background-color: #455a64;
@@ -323,29 +203,19 @@
       padding: 10px 0px 10px 0px;
     }
   </style>
-  <style>
-    footer {
-      background-color: #80cbc4;
-      padding: 20px 0px 20px 0px;
+  <!-- BACKGROUND VIDEO FALLBACK -->
+  <!--[if lt IE 9]>
+  <style type="text/css">
+    .mejs-offscreen {
+      display: none !important;
+    }
+    .video-glass {
+      background:transparent;
+      filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F39AEA6,endColorstr=#7F39AEA6);
+      zoom: 1;
     }
   </style>
-  <style>
-    .drawer-heading img {
-      width: 100px;
-      border-radius: 50%;
-    }
-    .drawer-heading .profile {
-      padding: 15px;
-      line-height: 20px;
-    }
-  </style>
-  <script>
-    $(function () {
-      $('.drawer-nav > li > a').click(function () {
-        $('#drawer').drawer('hide');
-      });
-    });
-  </script>
+  <![endif]-->
 </head>
 <body class="has-drawer">
 <!-- drawer start -->

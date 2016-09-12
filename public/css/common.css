@@ -1,0 +1,123 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+* {
+  font-family: 'Nanum Gothic', sans-serif;
+}
+b {
+  font-weight: 900;
+}
+h1 {
+  line-height: 1.2em;
+  font-weight: 400;
+  font-size: 3em;
+  max-width: 700px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+h2 {
+  line-height: 1.3em;
+  font-weight: 400;
+  font-size: 2em;
+  max-width: 700px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+h3 {
+  line-height: 1.4em;
+  font-weight: 400;
+  font-size: 1.5em;
+  max-width: 700px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+h4 {
+  line-height: 1.5em;
+  font-weight: 400;
+  font-size: 1.2em;
+  max-width: 700px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.btn-default {
+  color: #ffffff;
+  background-color: #26a69a;
+  border: none;
+  padding-left: 28px;
+  padding-right: 28px;
+}
+.btn-default:hover {
+  color: #ffffff;
+  background-color: #26a69a;
+  border: none;
+}
+.btn-default:focus {
+  color: #ffffff;
+  background-color: #26a69a;
+  border: none;
+}
+body {
+  color: #ffffff;
+}
+
+/* MENU */
+.main-menu a {
+  color: #ffffff;
+}
+.main-menu .wide {
+  margin: 20px auto auto auto;
+  height: 62px;
+}
+.main-menu .narrow {
+  height: 46px;
+  background-color: rgba(55,71,79,0.7);
+  font-size: 25px;
+}
+.main-menu > div > span {
+  text-align: center;
+}
+.main-menu .narrow .glyphicon {
+  margin-top: 10px;
+}
+.main-menu .narrow > span {
+  height: 46px;
+  line-height: 46px;
+}
+.main-menu .wide span {
+  border-bottom: solid 1px #ffffff;
+  height: 62px;
+  line-height: 62px;
+}
+.main-menu .logo {
+  display: block;
+}
+.main-menu .wide .logo {
+  width: 80px;
+  margin: 15px auto auto auto;
+}
+.main-menu .narrow .logo {
+  width: 50px;
+  margin: 4px auto auto auto;
+}
+
+/* DRAWER */
+.drawer-heading img {
+  width: 100px;
+  border-radius: 50%;
+}
+.drawer-heading .profile {
+  padding: 15px;
+  line-height: 20px;
+}
+
+/* FOOTER */
+footer {
+  background-color: #80cbc4;
+  padding: 20px 0px 20px 0px;
+}

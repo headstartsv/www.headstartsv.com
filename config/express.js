@@ -1,4 +1,5 @@
 const express = require('express'),
+  hbs = require('express-handlebars'),
   glob = require('glob'),
   favicon = require('serve-favicon'),
   logger = require('morgan'),
@@ -15,7 +16,14 @@ module.exports = function(app, config) {
   app.locals.ENV_DEVELOPMENT = env == 'development';
 
   app.set('views', config.root + '/app/views');
-  app.set('view engine', 'ejs');
+  app.engine('.hbs', hbs({
+    extname: '.hbs',
+    defaultLayout: 'main',
+    layoutsDir: config.root + '/app/views/layouts',
+    partialsDir: config.root + '/app/views/partials'
+  }));
+  app.set('view engine', '.hbs');
+  // app.set('view engine', 'ejs');
 
   // app.use(favicon(config.root + '/public/img/favicon.ico'));
   app.use(logger('dev'));
