@@ -27,9 +27,7 @@ router.get('/', function (req, res, next) {
   //     articles: articles
   //   });
   // });
-  res.render('home', {
-      head: 'home'
-    });
+  res.render('home', {});
   // res.sendFile(path.join(__dirname + '../../public/'));
 });
 router.get('/test.js', function (req, res, next) {

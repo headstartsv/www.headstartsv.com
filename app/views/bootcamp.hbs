@@ -1,0 +1,168 @@
+<style>
+  /* HEADER */
+  header {
+    text-align: center;
+    background-color: #39AEA6;
+  }
+  header h3 {
+    margin: 50px auto 50px auto;
+  }
+
+  /* ITEM LIST */
+  article.item-list {
+    background-color: #ffffff;
+    color: #1F555F;
+  }
+  .list-container {
+    margin: 10px auto 10px auto;
+    font-size: 1em;
+  }
+  article.item-list section .border-box {
+    border: solid 2px #9DCCBF;
+    margin: 3px;
+  }
+  .list-container .desc {
+    margin: 0px;
+  }
+  .list-container .desc span {
+    padding: 3px;
+  }
+  .list-container h4 {
+    border-bottom: solid 1px #9DCCBF;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .list-container .btn {
+    width: 80%;
+    margin: 10px auto 10px auto;
+    display: block;
+  }
+
+  /* CUSTOMER */
+  .customer {
+    color: #000000;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  .customer section {
+    padding: 20px;
+  }
+  .customer span {
+    line-height: 2em;
+  }
+  .customer h1 {
+    color: rgb(31,85,95);
+    margin-left: 0px;
+    text-align: left;
+  }
+  .customer img {
+    width: 100%;
+    padding: 15%;
+  }
+  .customer h2 {
+    text-align: center;
+    color: #80cbc4;
+  }
+
+  /* CATCHPHRASE */
+  .catchphrase {
+    background-color: #37474f;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  .catchphrase h1 {
+    text-align: center;
+  }
+  .catchphrase h3 {
+    text-align: center;
+  }
+</style>
+
+<!-- PROMOTE -->
+<header>
+  <section class="container">
+    <h1><b>Data Science Bootcamp</b></h1>
+    <h3>
+      Data Science Intensive Course<br/>
+      프로젝트 수행 부터 포트폴리오 제작 까지<br/>
+      Data Scientisct 가 되기 위한 집중 과정
+    </h3>
+    <p>
+      Instructor 가 제공하는 학습 Project 와 개인 Project 수행<br/>
+      Data Science Specialist 와의 1:1 Mentoring<br/>
+      4 주 집중 훈련 캠프
+    </p>
+  </section>
+</header>
+<main>
+  <!-- ITEM LIST -->
+  <article class="item-list">
+    {{#each itemRows}}
+    <div class="list-container container row">
+        {{#each this}}
+        <section class="col-md-4">
+          <div class="border-box">
+            <h4>{{this.loc}}</h4>
+            <h3>{{this.title}}</h3>
+            <div class="row desc">
+              <span class="col-md-3">집행기간 :</span>
+              <span class="col-md-9">{{this.campStart}} ~ {{this.campEnd}}</span>
+            </div>
+            <div class="row desc">
+              <span class="col-md-3">모집기간 :</span>
+              <span class="col-md-9">{{this.applyStart}} ~ {{this.applyEnd}}</span>
+            </div>
+            <div class="row desc">
+              <span class="col-md-3">대상 :</span>
+              <span class="col-md-9">{{this.target}}</span>
+            </div>
+            <button class="btn btn-default">DETAIL</button>
+          </div>
+        </section>
+        {{/each}}
+    </div>
+    {{/each}}
+  </article>
+
+  <div class="container">
+    <hr/>
+  </div>
+
+  <!-- CUSTOMER -->
+  <article class="customer">
+    <div class="container">
+      <h1>Bootcamp 목적</h1>
+      <div class="row">
+        <section class="col-md-4">
+          <figure>
+            <img src="img/bootcamp-man-climbing-stairs.png"/>
+          </figure>
+          <h2>For Beginner</h2>
+          <span>Data Science 를 처음 접하는 사람들을 위하여 현직 Data Scientist 가 디자인한 커리큘럼에 따라, R 을 활용하여 기본적인 코드를 스스로 작성할 수 있고, 이를 활용하기 위한 Pacage 와 Toolset을 사용할 수 있는 기초 단계의 Project 를 수행</span>
+        </section>
+        <section class="col-md-4">
+          <figure>
+            <img src="img/bootcamp-businessman-1.png"/>
+          </figure>
+          <h2>For Advancer</h2>
+          <span>Data 활용에 있어 Hadoop, Spark 와 같은 Big Data Tool 을 사용하여 Data 를 분석해내고 , Visualiztion 을 수행해 낼 수 있는 전문가로써의 능력을 향상시킬 수 있도록 디자인된 Project 를 수행하여 실무적 경험을 쌓고 Portfolio 를 제작할 수 있도록 진행</span>
+        </section>
+        <section class="col-md-4">
+          <figure>
+            <img src="img/bootcamp-business-agreement.png"/>
+          </figure>
+          <h2>To Collaborate</h2>
+          <span>기업 연계 Project 를 수행하여 Real Industry Data 를 분석 및 시각화를 수행하고 나아가 결과물에 숨겨져있는  사회적 현상과 미래 예측 등 산업에 활용할 수 있는 논리적 결론을 도출할 수 있도록 심화 Project  수행</span>
+        </section>
+      </div>
+    </div>
+  </article>
+
+  <!-- CATCHPHRASE -->
+  <article class="catchphrase">
+    <div class="container">
+      <h1>Headstart Bootcamp</h1>
+      <h3>기존의 교육 방식과는 달리 현재 Data Scientist 로 활동하고 있는 전문가들의 경험을 바탕으로 디자인된 Project 를 Bootcamp 기간 동안 수행하여 기술적 능력과 실무적 능력을 향상시키고, 나아가 Portfolio 로 활용될 수 있도록 실전 경험 프로그램을 운영합니다.</h3>
+    </div>
+  </article>
+</main>

@@ -71,7 +71,7 @@ body {
   color: #ffffff;
 }
 .main-menu .wide {
-  margin: 20px auto auto auto;
+  margin: 20px auto 18px auto;
   height: 62px;
 }
 .main-menu .narrow {
@@ -120,4 +120,14 @@ body {
 footer {
   background-color: #80cbc4;
   padding: 20px 0px 20px 0px;
+}
+
+.nav-background.wide {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100px;
+  z-index: -2;
+  background-color: #39AEA6;
 }
