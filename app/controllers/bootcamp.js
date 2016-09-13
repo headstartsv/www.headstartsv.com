@@ -1,3 +1,5 @@
+'use strict';
+
 const express = require('express'),
   router = express.Router();
 
@@ -80,5 +82,9 @@ router.get('/', function (req, res, next) {
 });
 
 router.get('/:bootcampId', function (req, res, next) {
+  console.log(req.params);
+  let bootcampId = req.params['bootcampId'] || null;
+  //TODO check bootcampId, if it is invalid id, route to bootcamp main page.
+
   res.render('bootcamp-detail', {});
 });

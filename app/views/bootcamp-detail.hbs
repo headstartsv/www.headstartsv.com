@@ -1,0 +1,224 @@
+<style>
+  article.bootcamp-detail {
+    color: #000000;
+  }
+  article.bootcamp-detail h2 {
+    margin-left: 0px;
+    text-align: left;
+  }
+  article.bootcamp-detail .container {
+    margin: 10px auto 10px auto;
+  }
+  article.bootcamp-detail table {
+    width: 100%;
+    border-spacing: 2px;
+    border-collapse: separate;
+  }
+  article.bootcamp-detail th {
+    border: solid 1px;
+    text-align: center;
+    padding: 2px;
+  }
+  article.bootcamp-detail td {
+    border: solid 1px;
+    padding: 3px 10px 3px 10px;
+  }
+
+  article.bootcamp-space h2 {
+    margin-left: 0px;
+    text-align: left;
+  }
+  article.bootcamp-space {
+    color: #000000;
+  }
+  article.bootcamp-space img {
+    width: 100%;
+    margin: 10px;
+    border: solid 1px;
+  }
+
+  article.bootcamp-project-description {
+    color: #000000;
+  }
+  article.bootcamp-project-description h2 {
+    margin-left: 0px;
+    text-align: left;
+  }
+  article.bootcamp-project-description section div {
+    padding: 3px;
+    border: solid 1px;
+    margin: 5px;
+    text-align: center;
+  }
+  article.bootcamp-project-description section .name {
+    font-weight: 400;
+  }
+  article.bootcamp-project-description section .desc {
+    min-height: 150px;
+  }
+</style>
+
+{{> body/header-bootcamp}}
+<main>
+  <article class="bootcamp-detail">
+    <div class="container">
+      <h2>Bootcamp Details</h2>
+      <table>
+        <tr>
+          <th>
+            과 정
+          </th>
+          <td>
+            Project 진행 + Feedback Seminar
+          </td>
+        </tr>
+        <tr>
+          <th>
+            장 소
+          </th>
+          <td>
+            3350 Thomas Rd, Santa Clara, CA, U.S, Headstart SiliconValley
+          </td>
+        </tr>
+        <tr>
+          <th>
+            기 간
+          </th>
+          <td>
+            Bootcamp 에 따라 다르게 표시
+          </td>
+        </tr>
+        <tr>
+          <th>
+            일 정
+          </th>
+          <td>
+            9:00 A.M ~ 05:00 P.M (주 2회 Project Feedback Seminar)
+          </td>
+        </tr>
+        <tr>
+          <th>
+            Project List
+          </th>
+          <td>
+            산불 예측<br/>
+            자전거 수요 예측<br/>
+            Air BnB Data 를 활용한 여행객 수요 예측<br/>
+            의료 Data 를 활용한 암 진행 정도와 사망 연관성 분석<br/>
+            등등등
+          </td>
+        </tr>
+        <tr>
+          <th>
+            준비물
+          </th>
+          <td>
+            개인 노트북
+          </td>
+        </tr>
+      </table>
+    </div>
+  </article>
+  <div class="container">
+    <hr/>
+  </div>
+  <article class="bootcamp-space">
+    <div class="container">
+      <h2>Bootcamp Space</h2>
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-4">
+          <img src="/img/background0.jpg"/>
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-4">
+          <img src="/img/background1.jpg"/>
+        </div>
+        <div class="col-md-1"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-4">
+          <img src="/img/background2.jpg"/>
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-4">
+          <img src="/img/background3.jpg"/>
+        </div>
+        <div class="col-md-1"></div>
+      </div>
+      <ul>
+        <li>WIFI 제공</li>
+        <li>Printer, Fax, Copy Machine 사용가능</li>
+        <li>탕비실 완비</li>
+        <li>주차장</li>
+      </ul>
+    </div>
+  </article>
+  <div class="container">
+    <hr/>
+  </div>
+  <article class="bootcamp-project-description">
+    <div class="container">
+      <h2>Project Description</h2>
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-4">
+          <section>
+            <div class="name">
+              Project Name
+            </div>
+            <div class="desc">
+              프로젝트 목표<br/>
+              사용 언어<br/>
+              소요 시간
+            </div>
+          </section>
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-4">
+          <section>
+            <div class="name">
+              Project Name
+            </div>
+            <div class="desc">
+              프로젝트 목표<br/>
+              사용 언어<br/>
+              소요 시간
+            </div>
+          </section>
+        </div>
+        <div class="col-md-1"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-4">
+          <section>
+            <div class="name">
+              Project Name
+            </div>
+            <div class="desc">
+              프로젝트 목표<br/>
+              사용 언어<br/>
+              소요 시간
+            </div>
+          </section>
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-4">
+          <section>
+            <div class="name">
+              Project Name
+            </div>
+            <div class="desc">
+              프로젝트 목표<br/>
+              사용 언어<br/>
+              소요 시간
+            </div>
+          </section>
+        </div>
+        <div class="col-md-1"></div>
+      </div>
+    </div>
+  </article>
+</main>
