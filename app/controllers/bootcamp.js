@@ -78,3 +78,7 @@ router.get('/', function (req, res, next) {
     }]]
   });
 });
+
+router.get('/:bootcampId', function (req, res, next) {
+  res.render('bootcamp-detail', {});
+});
