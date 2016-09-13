@@ -56,6 +56,50 @@
   article.bootcamp-project-description section .desc {
     min-height: 150px;
   }
+
+  article.bootcamp-camp-description {
+    color: #000000;
+  }
+  article.bootcamp-camp-description h2 {
+    margin-left: 0px;
+    text-align: left;
+  }
+  article.bootcamp-camp-description section {
+    margin: 5px;
+    padding: 5px;
+    border: solid 1px;
+    min-height: 200px;
+    text-align: center;
+  }
+
+  article.bootcamp-price {
+    color: #000000;
+  }
+  article.bootcamp-price h2 {
+    margin-left: 0px;
+    text-align: left;
+  }
+  article.bootcamp-price .row {
+    margin: 10px;
+  }
+  article.bootcamp-price .name {
+    text-align: right;
+    font-weight: 400;
+  }
+  article.bootcamp-price li {
+  }
+  article.bootcamp-price .box {
+    padding: 5px;
+    border: solid 1px;
+  }
+
+  .btn.apply {
+    font-size: 2em;
+    min-width: 150px;
+    min-height: 40px;
+    display: block;
+    margin: 20px auto 40px auto;
+  }
 </style>
 
 {{> body/header-bootcamp}}
@@ -221,4 +265,74 @@
       </div>
     </div>
   </article>
+  <div class="container">
+    <hr/>
+  </div>
+  <article class="bootcamp-camp-description">
+    <div class="container">
+      <h2>Bootcamp Description</h2>
+      <p>Bootcamp 진행 내용과 실제 Job Description 의 매칭 정도를 직접 확인하세요.</p>
+      <div class="row">
+        <div class="col-md-4">
+          <section>
+            Headstart SV<br/>
+            Bootcamp<br/>
+            Desctiption<br/>
+          </section>
+        </div>
+        <div class="col-md-4">
+          <section>
+            Job Description<br/>
+            (Glassdoor)
+          </section>
+        </div>
+        <div class="col-md-4">
+          <section>
+            Job Description<br/>
+            (Monster)
+          </section>
+        </div>
+      </div>
+    </div>
+  </article>
+  <div class="container">
+    <hr/>
+  </div>
+  <article class="bootcamp-price">
+    <div class="container">
+      <h2>Bootcamp Description</h2>
+      <div class="row">
+        <div class="col-md-4 name">
+          캠프 일정 :
+        </div>
+        <div class="col-md-4">
+          <p>4주 (월요일 ~ 금요일)</p>
+          <p>9 am ~ 5 pm</p>
+          <p>주 1회 기업 방문 및 Field Trip</p>
+          <p>주 1회 이상 Social Event 참석</p>
+          <p>주 2회 Data Science Seminar (with Data Scientist)</p>
+          <h3>총 가격 : $10,000</h3>
+        </div>
+        <div class="col-md-4">
+          <div class="box">
+            <ul>
+              <li>항공 티켓</li>
+              <li>차량 운행</li>
+              <li>숙박 시설</li>
+              <li>식사 제공(아침 & 저녁)</li>
+              <li>기업 방문</li>
+              <li>프로젝트 진행</li>
+              <li>포트폴리오 제작</li>
+              <li>Social Event 참여</li>
+              <li>생활 지원</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+  <div class="container">
+    <hr/>
+  </div>
+  <button class="btn btn-default apply">Apply Now</button>
 </main>
