@@ -143,25 +143,6 @@
     display: block;
     margin: auto;
   }
-
-  /* CONTACTS */
-  .contacts {
-    color: #e0e0e0;
-    background-color: #455a64;
-    padding: 30px 0px 30px 0px;
-  }
-  .contacts h3 {
-    width: 100%;
-    font-weight: 600;
-    max-width: 100%;
-    text-align: left;
-  }
-  .contacts section > span {
-    line-height: 2em;
-  }
-  .contacts section > div {
-    padding: 10px 0px 10px 0px;
-  }
 </style>
 <!-- BACKGROUND VIDEO FALLBACK -->
 <!--[if lt IE 9]>
@@ -308,33 +289,6 @@
       </figure>
     </div>
   </article>
-  <!-- CONTACTS -->
-  <article id="contacts" class="contacts">
-    <div class="container">
-      <section class="col-md-5">
-        <h3>CONTACTS</h3>
-        <span>
-          Headstart Silicon Valley<br/>
-          3350 Thomas rd, Santa Clara 95054<br/>
-          Info@headstartsv.com<br/>
-          (+1) 408-707-0660
-        </span>
-      </section>
-      <section class="col-md-7">
-        <!--<label for="basic-url">Your vanity URL</label>-->
-        <div class="input-group">
-          <span class="input-group-addon" id="basic-addon3">email</span>
-          <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
-        </div>
-        <!--<label for="basic-url2">Your vanity URL</label>-->
-        <div class="input-group">
-          <span class="input-group-addon" id="basic-addon4">message</span>
-          <textarea class="form-control" id="basic-url2" aria-describedby="basic-addon4" rows="5"></textarea>
-        </div>
-        <div>
-          <button class="btn btn-default">SEND</button>
-        </div>
-      </section>
-    </div>
-  </article>
+
+  {{> body/contacts}}
 </main>
