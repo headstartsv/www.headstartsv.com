@@ -88,3 +88,12 @@ router.get('/:bootcampId', function (req, res, next) {
 
   res.render('bootcamp-detail', {});
 });
+
+
+router.get('/:bootcampId/apply', function (req, res, next) {
+  console.log(req.params);
+  let bootcampId = req.params['bootcampId'] || null;
+  //TODO check bootcampId, if it is invalid id, route to bootcamp main page.
+
+  res.render('bootcamp-apply', {});
+});
