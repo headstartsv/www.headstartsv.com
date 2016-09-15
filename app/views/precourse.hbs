@@ -1,7 +1,359 @@
 <style>
+  main.precourse {
+    color: #000000;
+  }
+  .btn.btn-large {
+    font-size: 2em;
+    min-width: 150px;
+    min-height: 40px;
+    display: block;
+    margin: 20px auto 40px auto;
+  }
+
+  article.syllabus h2 {
+    margin-left: 0px;
+    text-align: left;
+  }
+  article.syllabus .container {
+    margin: 10px auto 10px auto;
+  }
+  article.syllabus table {
+    width: 100%;
+    border-spacing: 2px;
+    border-collapse: separate;
+  }
+  article.syllabus th {
+    border: solid 1px;
+    text-align: center;
+    padding: 2px;
+  }
+  article.syllabus td {
+    border: solid 1px;
+    padding: 3px 10px 3px 10px;
+  }
+
+  .box.tall section {
+    padding: 20px;
+  }
+  .box.tall p {
+    line-height: 2em;
+  }
+  .box.tall h1 {
+    color: rgb(31,85,95);
+    margin-left: 0px;
+    text-align: left;
+  }
+  .box.tall img {
+    width: 100%;
+    padding: 15%;
+  }
+  .box.tall h2 {
+    text-align: center;
+    color: #80cbc4;
+  }
+  .box.wide {
+    height: 80px;
+    color: #000000;
+    background-color: #ffffff;
+    padding: 10px;
+    margin: 10px;
+  }
+  .box.wide img {
+    float: left;
+    width: 60px;
+    margin-right: 10px;
+  }
+  .box.border {
+    border: solid 2px #37474f;
+  }
 </style>
 
-{{> body/header-bootcamp}}
-<main>
-
+{{> body/header-precourse}}
+<main class="precourse">
+  <article class="download">
+    <div class="container">
+      <h2>Pre-Courses Tool Install</h2>
+      <p>
+        본 프로그램은 과제를 전달받기 위한 프로그램입니다.
+        코딩에 소요된 시간을 기록하고, 사용자가 사용할 수 있는 언어와 활용 정도를
+        한눈에 확인할 수 있도록 도표를 제공는 개발자를 위한 Tool 입니다.
+      </p>
+      <button id="buttonDownload" class="btn btn-default btn-large">Download</button>
+    </div>
+  </article>
+  <article class="syllabus">
+    <div class="container">
+      <h2>Pre-Courses Syllabus</h2>
+      <table>
+        <tr>
+          <th colspan="2">
+            First Step : Statistics
+          </th>
+        </tr>
+        <tr>
+          <th>확률론</th>
+          <td>
+            확률의 정의 및 조건확률<br/>
+            랜덤 변수
+          </td>
+        </tr>
+        <tr>
+          <th>선형대수학</th>
+          <td>
+            선형대수학 기초<br/>
+            선형대수 심화 및 최적화
+          </td>
+        </tr>
+        <tr>
+          <th colspan="2">
+            Second Step : Regression & Data Base
+          </th>
+        </tr>
+        <tr>
+          <th>확률론</th>
+          <td>
+            다변수 랜덤변수<br/>
+            검정 및 추정
+          </td>
+        </tr>
+        <tr>
+          <th>Regression</th>
+          <td>
+            선형 회귀 분석<br/>
+            회귀 분석 진단
+          </td>
+        </tr>
+        <tr>
+          <th>Data Base</th>
+          <td>
+            Data Base 이해 및 설계<br/>
+            SQL / NOSQL
+          </td>
+        </tr>
+        <tr>
+          <th>Machine Learning</th>
+          <td>
+            데이터 전처리<br/>
+            예측론
+          </td>
+        </tr>
+        <tr>
+          <th>Python</th>
+          <td>
+            Python Library 를 이용한 데이터 시각화
+          </td>
+        </tr>
+        <tr>
+          <th colspan="2">
+            Third Step : Machine Learning
+          </th>
+        </tr>
+        <tr>
+          <th>Machine Learning</th>
+          <td>
+            (Un)Supervised Learning
+            PCA
+          </td>
+        </tr>
+        <tr>
+          <th>R</th>
+          <td>
+            R 을 활용한 데이터 분석
+          </td>
+        </tr>
+        <tr>
+          <th colspan="2">
+            Final Step : Project
+          </th>
+        </tr>
+        <tr>
+          <th>Project</th>
+          <td>
+            학습용 기초 Project 수행
+          </td>
+        </tr>
+      </table>
+    </div>
+  </article>
+  <article class="goal">
+    <div class="container">
+      <h2>Pre-Courses 목표</h2>
+      <div class="row">
+        <section class="col-md-3">
+          <div class="box tall">
+            <img src="/img/mock.png"/>
+            <p>
+              어떻게 Data Science 를 시작해야 할지 고민하고 있는 사람들을 위한 Data Science 입문코스
+            </p>
+          </div>
+        </section>
+        <section class="col-md-3">
+          <div class="box tall">
+            <img src="/img/mock.png"/>
+            <p>
+              통계학의 기초를 이해하고, Data Science 의 개념과 R 의 기본적인 활용 방법 제시
+            </p>
+          </div>
+        </section>
+        <section class="col-md-3">
+          <div class="box tall">
+            <img src="/img/mock.png"/>
+            <p>
+              Data 의 기본 구조를 이해하고, Data 종류에 따른 분석 방법을 스스로 판단할 수 있음
+            </p>
+          </div>
+        </section>
+        <section class="col-md-3">
+          <div class="box tall">
+            <img src="/img/mock.png"/>
+            <p>
+              Bootcamp 에 참여할 수 있도록 Project 를 스스로 수행 할 수 있는 Limitation 제공
+            </p>
+          </div>
+        </section>
+      </div>
+    </div>
+  </article>
+  <article class="target">
+    <div class="container">
+      <h2>Pre-Courses 추천 대상</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="box tall">
+            <img src="/img/mock.png"/>
+            <h4>
+              Bootcamp 참가 희망자
+            </h4>
+            <p>
+              Headstart는 미국IT 기업의 업무진행방식을 직접 경험할 수 있는 Project를 통한 실습 및 인턴쉽을 제공하며 현장실습교과목을 통한 학점인정이 가능합니다. Headstart는 실제 업무에 사용되는 프로그래밍 역량을 강화하고 취업에 필요한 데이터 포트폴리오를 완성하여 취업까지 이어질 수 있도록 지원해 드립니다.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="box tall">
+            <img src="/img/mock.png"/>
+            <h4>
+              데이터 분야 취업 희망자
+            </h4>
+            <p>
+              현업에서 업무역량을 키우고 싶으신 분, 데이터분석가로 커리어 전환하고 싶으신 분, 효율적인 데이터 분석과 실무적용을 위해 Data Science에 대한 Project를 진행합니다. Data Scientist로의 지름길을 찾아 가는데 Headstart 가 함께하겠습니다.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="box tall">
+            <img src="/img/mock.png"/>
+            <h4>
+              데이터 분야 커리어 전환
+            </h4>
+            <p>
+              Headstart는 실제 미국 IT기업이 데이터를 분석하는 방법과 데이터 활용사례를 기반으로 차별화된 Data Science 관련 사내 교육을 진행합니다. 무수한 데이터 속 올바른 결정을 내리기 힘든 경우, HEADSTART와의 아웃소싱을 통해 최상의 결과를 만들어보십시오.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+  <article class="feature">
+    <div class="container">
+      <h2>Pre-Courses 특징</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="box wide border">
+            <img src="/img/mock.png"/>
+            <b>
+              Qualified Curriculum
+            </b>
+            <p>
+              Data Science의 기초를 위한 코스로 현직 실리콘 밸리 Data Scientists 감수를 통과한 증명된 커리큘럼
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="box wide border">
+            <img src="/img/mock.png"/>
+            <b>
+              Essencial Configuration
+            </b>
+            <p>
+              현직 전문가의 경험을 토대로 하여 현업에 반드시 필요한 정수만 뽑아내어 초보자 최적화 커리큘럼 제작
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="box wide border">
+            <img src="/img/mock.png"/>
+            <b>
+              스스로 학습 기반
+            </b>
+            <p>
+              일방적인 강의 전달을 벗어나 학습 자료를 개인에게 배포함으로서 진도를 스스로 조율할 수 있는 시스템
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="box wide border">
+            <img src="/img/mock.png"/>
+            <b>
+              Free & Self
+            </b>
+            <p>
+              정해진 기한 없이 배포받은 학습 자료를 활용하여 언제든지학습 및 복습 가능
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="box wide border">
+            <img src="/img/mock.png"/>
+            <b>
+              1:1 Q&A
+            </b>
+            <p>
+              학습 중 발생할 수 있는 문제와 궁금증을 Curriculum Designer 에게 E-Mail 을 통하여 1:1 질의 응답 가능
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="box wide border">
+            <img src="/img/mock.png"/>
+            <b>
+              Real Industry
+            </b>
+            <p>
+              실제 기업에서  Data 분석을 사용한 사례를 제공하여 결과물을 활용할 수 있는 방법 제시
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="box wide border">
+            <img src="/img/mock.png"/>
+            <b>
+              Basic Statistics
+            </b>
+            <p>
+              Data Science 에 활용되는 통계학의 범위 만을 엄선하여 쉽게 접근할 수 있도록 제작
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="box wide border">
+            <img src="/img/mock.png"/>
+            <b>
+              Basic R Code
+            </b>
+            <p>
+              R 코딩의 기초 문법부터 응용단계 까지 현업 활용에 활용할 수 있도록 Curriculum 디자인
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+  <button id="buttonStudyNow" class="btn btn-default btn-large">Study Now</button>
 </main>
