@@ -18,7 +18,7 @@
 <script>
   $(function () {
     $('#buttonSend').click(function (){
-      alert('빠른 시간내에 연락 드리겠습니다.');
+      alert('빠른 시간내에 담당자가 연락 드리겠습니다.');
       location.href = '/';
     });
   });
@@ -41,12 +41,12 @@
       <section class="form">
         <h3>필수 입력 사항</h3>
         <div class="input-group">
-          <span class="input-group-addon" id="form-name">이름</span>
-          <input type="text" class="form-control" id="name" aria-describedby="form-name">
+          <span class="input-group-addon" id="form-name">성명</span>
+          <input type="text" class="form-control" id="name" aria-describedby="form-name" placeholder="성명">
         </div>
         <div class="input-group">
           <span class="input-group-addon" id="form-tel">핸드폰 번호</span>
-          <input type="text" class="form-control" id="tel" aria-describedby="form-tel">
+          <input type="text" class="form-control" id="tel" aria-describedby="form-tel" placeholder="연락 가능한 번호">
         </div>
         <div class="input-group">
           <span class="input-group-addon" id="form-email">E-Mail</span>
@@ -57,22 +57,22 @@
         <h3>선택 입력 사항</h3>
         <div class="input-group">
           <span class="input-group-addon" id="form-git">Git</span>
-          <input type="text" class="form-control" id="git" aria-describedby="form-git">
+          <input type="text" class="form-control" id="git" aria-describedby="form-git" placeholder="url">
         </div>
         <div class="input-group">
           <span class="input-group-addon" id="form-linkedin">Linked In</span>
-          <input type="text" class="form-control" id="linkedin" aria-describedby="form-linkedin">
+          <input type="text" class="form-control" id="linkedin" aria-describedby="form-linkedin" placeholder="url">
         </div>
         <div class="input-group">
           <span class="input-group-addon" id="form-blog">Blog</span>
-          <input type="text" class="form-control" id="blog" aria-describedby="form-blog">
+          <input type="text" class="form-control" id="blog" aria-describedby="form-blog" placeholder="url">
         </div>
       </section>
       <section class="form">
         <h3>기타 입력 사항</h3>
         <div class="input-group">
           <span class="input-group-addon" id="basic-intro">본인 소개</span>
-          <textarea class="form-control" id="basic-intro" aria-describedby="basic-intro" rows="5"></textarea>
+          <textarea class="form-control" id="basic-intro" aria-describedby="basic-intro" rows="5" placeholder="Pre-Courses 수료 여부, 데이타 사이언스 경험, 프로그래밍 경험 및 직업"></textarea>
         </div>
       </section>
       <button id="buttonSend" class="btn btn-default send">Send</button>
