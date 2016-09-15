@@ -1,7 +1,81 @@
 <style>
+  main.bootcamp-apply {
+    color: #000000;
+  }
+  main.bootcamp-apply h3 {
+    margin-left: 0px;
+    text-align: left;
+  }
+
+  .btn.send {
+    font-size: 2em;
+    min-width: 150px;
+    min-height: 40px;
+    display: block;
+    margin: 20px auto 40px auto;
+  }
 </style>
+<script>
+  $(function () {
+    $('#buttonSend').click(function (){
+      alert('빠른 시간내에 연락 드리겠습니다.');
+      location.href = '/';
+    });
+  });
+</script>
 
 {{> body/header-bootcamp}}
-<main>
-
+<main class="bootcamp-apply">
+  <article class="head">
+    <div class="container">
+      <h2>Bootcamp Application</h2>
+      <ul>
+        <li>작성된 개인 정보는 Data Science Bootcamp 진행 용도 외에는 절대로 사용되지 않습니다.</li>
+        <li>Application 작성 후 선발된 인원은 개별적으로 준비 사항을 전달해드립니다.</li>
+        <li>E-Mail Address 는 Gmail 사용을 권장합니다.</li>
+      </ul>
+    </div>
+  </article>
+  <article class="forms">
+    <div class="container">
+      <section class="form">
+        <h3>필수 입력 사항</h3>
+        <div class="input-group">
+          <span class="input-group-addon" id="form-name">이름</span>
+          <input type="text" class="form-control" id="name" aria-describedby="form-name">
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon" id="form-tel">핸드폰 번호</span>
+          <input type="text" class="form-control" id="tel" aria-describedby="form-tel">
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon" id="form-email">E-Mail</span>
+          <input type="text" class="form-control" id="email" aria-describedby="form-email">
+        </div>
+      </section>
+      <section class="form">
+        <h3>선택 입력 사항</h3>
+        <div class="input-group">
+          <span class="input-group-addon" id="form-git">Git</span>
+          <input type="text" class="form-control" id="git" aria-describedby="form-git">
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon" id="form-linkedin">Linked In</span>
+          <input type="text" class="form-control" id="linkedin" aria-describedby="form-linkedin">
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon" id="form-blog">Blog</span>
+          <input type="text" class="form-control" id="blog" aria-describedby="form-blog">
+        </div>
+      </section>
+      <section class="form">
+        <h3>기타 입력 사항</h3>
+        <div class="input-group">
+          <span class="input-group-addon" id="basic-intro">본인 소개</span>
+          <textarea class="form-control" id="basic-intro" aria-describedby="basic-intro" rows="5"></textarea>
+        </div>
+      </section>
+      <button id="buttonSend" class="btn btn-default send">Send</button>
+    </div>
+  </article>
 </main>
