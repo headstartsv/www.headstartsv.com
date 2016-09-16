@@ -1,49 +1,14 @@
 <style>
-  article.bootcamp-detail {
-    color: #000000;
-  }
-  article.bootcamp-detail h2 {
-    margin-left: 0px;
-    text-align: left;
-  }
   article.bootcamp-detail .container {
     margin: 10px auto 10px auto;
   }
-  article.bootcamp-detail table {
-    width: 100%;
-    border-spacing: 2px;
-    border-collapse: separate;
-  }
-  article.bootcamp-detail th {
-    border: solid 1px;
-    text-align: center;
-    padding: 2px;
-  }
-  article.bootcamp-detail td {
-    border: solid 1px;
-    padding: 3px 10px 3px 10px;
-  }
 
-  article.bootcamp-space h2 {
-    margin-left: 0px;
-    text-align: left;
-  }
-  article.bootcamp-space {
-    color: #000000;
-  }
   article.bootcamp-space img {
     width: 100%;
     margin: 10px;
     border: solid 1px;
   }
 
-  article.bootcamp-project-description {
-    color: #000000;
-  }
-  article.bootcamp-project-description h2 {
-    margin-left: 0px;
-    text-align: left;
-  }
   article.bootcamp-project-description section div {
     padding: 3px;
     border: solid 1px;
@@ -57,13 +22,6 @@
     min-height: 150px;
   }
 
-  article.bootcamp-camp-description {
-    color: #000000;
-  }
-  article.bootcamp-camp-description h2 {
-    margin-left: 0px;
-    text-align: left;
-  }
   article.bootcamp-camp-description section {
     margin: 5px;
     padding: 5px;
@@ -72,13 +30,6 @@
     text-align: center;
   }
 
-  article.bootcamp-price {
-    color: #000000;
-  }
-  article.bootcamp-price h2 {
-    margin-left: 0px;
-    text-align: left;
-  }
   article.bootcamp-price .row {
     margin: 10px;
   }
@@ -86,28 +37,18 @@
     text-align: right;
     font-weight: 400;
   }
-  article.bootcamp-price li {
-  }
   article.bootcamp-price .box {
     padding: 5px;
     border: solid 1px;
-  }
-
-  .btn.apply {
-    font-size: 2em;
-    min-width: 150px;
-    min-height: 40px;
-    display: block;
-    margin: 20px auto 40px auto;
   }
 </style>
 
 {{> body/header-bootcamp}}
 <main>
-  <article class="bootcamp-detail">
+  <article class="bootcamp-detail light">
     <div class="container">
-      <h2>Bootcamp Details</h2>
-      <table>
+      <h2 class="left">Bootcamp Details</h2>
+      <table class="default">
         <tr>
           <th>
             과 정
@@ -166,9 +107,9 @@
   <div class="container">
     <hr/>
   </div>
-  <article class="bootcamp-space">
+  <article class="bootcamp-space light">
     <div class="container">
-      <h2>Bootcamp Space</h2>
+      <h2 class="left">Bootcamp Space</h2>
       <div class="row">
         <div class="col-md-1"></div>
         <div class="col-md-4">
@@ -202,9 +143,9 @@
   <div class="container">
     <hr/>
   </div>
-  <article class="bootcamp-project-description">
+  <article class="bootcamp-project-description light">
     <div class="container">
-      <h2>Project Description</h2>
+      <h2 class="left">Project Description</h2>
       <div class="row">
         <div class="col-md-1"></div>
         <div class="col-md-4">
@@ -268,9 +209,9 @@
   <div class="container">
     <hr/>
   </div>
-  <article class="bootcamp-camp-description">
+  <article class="bootcamp-camp-description light">
     <div class="container">
-      <h2>Bootcamp Description</h2>
+      <h2 class="left">Bootcamp Description</h2>
       <p>Bootcamp 진행 내용과 실제 Job Description 의 매칭 정도를 직접 확인하세요.</p>
       <div class="row">
         <div class="col-md-4">
@@ -295,12 +236,12 @@
       </div>
     </div>
   </article>
-  <div class="container">
-    <hr/>
-  </div>
-  <article class="bootcamp-price">
+  <!--<div class="container">-->
+    <!--<hr/>-->
+  <!--</div>-->
+  <article class="bootcamp-price dark">
     <div class="container">
-      <h2>Bootcamp Description</h2>
+      <h2 class="left">Bootcamp Description</h2>
       <div class="row">
         <div class="col-md-4 name">
           캠프 일정 :
@@ -331,8 +272,10 @@
       </div>
     </div>
   </article>
-  <div class="container">
-    <hr/>
-  </div>
-  <a href="/bootcamp/1/apply"><button class="btn btn-default apply">Apply Now</button></a>
+  <!--<div class="container">-->
+    <!--<hr/>-->
+  <!--</div>-->
+  <article class="dark">
+    <a href="/bootcamp/1/apply"><button class="btn btn-default btn-large">Apply Now</button></a>
+  </article>
 </main>
