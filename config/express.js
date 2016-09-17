@@ -42,6 +42,15 @@ module.exports = function(app, config) {
   app.use(compress());
   app.use(express.static(config.root + '/public'));
   app.use(methodOverride());
+  app.use(function (req, res, next) {
+    if (req.user) {
+      console.log('LOGGED IN USER : ' + req.user.user);
+      res.locals.username = req.user.user;
+    } else {
+      console.log('NO LOGGED IN USER');
+    }
+    next();
+  });
 
   var controllers = glob.sync(config.root + '/app/controllers/*.js');
   controllers.forEach(function (controller) {

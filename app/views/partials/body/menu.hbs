@@ -45,20 +45,54 @@
     </div>
     <div class="col-md-5">
       <span class="col-md-3">
-        <a href="#instructor">
+        <a href="/#instructor">
           Team
         </a>
       </span>
       <span class="col-md-3">
-        <a href="#contacts">
+        <a href="/#contacts">
           Contacts
         </a>
       </span>
       <span class="col-md-3"></span>
-      <span class="col-md-3">SignIn</span>
+      <span class="col-md-3">
+        {{#if username}}
+          <a href="/auth/signout">
+            <button type="button" class="btn btn-default" data-toggle="modal">
+              SignOut
+            </button>
+          </a>
+        {{else}}
+          <button type="button" class="btn btn-default" data-toggle="modal" data-target="#loginModal">
+            SignIn
+          </button>
+        {{/if}}
+      </span>
     </div>
   </div>
 </nav>
 
 <span class="nav-background wide visible-md-block visible-lg-block">
 </span>
+
+<!-- Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="loginModalLabel">로그인</h4>
+      </div>
+      <div class="modal-body">
+        <a class="btn btn-block btn-lg btn-social btn-facebook" href="/auth/facebook">
+          <img src="/img/facebook-icon.png"/>
+          페이스북으로 로그인
+        </a>
+        <a class="btn btn-block btn-lg btn-social btn-naver" href="/auth/naver">
+          <img src="/img/naver-icon.png"/>
+          네이버로 로그인
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

@@ -20,15 +20,7 @@ module.exports = function (app) {
 };
 
 router.get('/', function (req, res, next) {
-  // Article.find(function (err, articles) {
-  //   if (err) return next(err);
-  //   res.render('index', {
-  //     title: 'Generator-Express MVC',
-  //     articles: articles
-  //   });
-  // });
   res.render('home', {});
-  // res.sendFile(path.join(__dirname + '../../public/'));
 });
 router.get('/test.js', function (req, res, next) {
   res.render('test', {

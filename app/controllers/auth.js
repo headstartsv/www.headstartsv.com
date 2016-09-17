@@ -46,6 +46,12 @@ router.get('/facebook/callback',
     res.redirect('/');
   });
 
+//SIGN OUT
+router.get('/signout', function (req, res) {
+  req.logout();
+  res.redirect('/');
+});
+
 module.exports = function (app) {
   app.use('/auth', router);
 };
