@@ -48,18 +48,26 @@ config.development.aws =
 config.development.facebook =
   config.staging.facebook =
     config.production.facebook = {
-      clientID: '1263439097023233',
-      clientSecret: '339206f287ebe507a6b7a13aa8b50b2c',
+      clientID: 'S0I1f6STn3vBTb0lQ1hu',
+      clientSecret: 'vWLgAuXgc1',
       callbackURL: "http://localhost:3000/auth/facebook/callback"
 };
 
 //NAVER
-config.development.naver =
-  config.staging.naver =
-    config.production.naver = {
-      clientID: 'b_V1ta71LrxKVBMWMGUF',
-      clientSecret: 'KIoNKRK6te',
-      callbackURL: 'http://localhost:3000/auth/naver/callback'
+config.development.naver = {
+  clientID: 'S0I1f6STn3vBTb0lQ1hu',
+  clientSecret: 'vWLgAuXgc1',
+  callbackURL: 'http://localhost:3000/auth/naver/callback'
+};
+config.staging.naver = {
+  clientID: 'S0I1f6STn3vBTb0lQ1hu',
+  clientSecret: 'vWLgAuXgc1',
+  callbackURL: 'http://localhost:3000/auth/naver/callback'
+}
+config.production.naver = {
+  clientID: 'b_V1ta71LrxKVBMWMGUF',
+  clientSecret: 'KIoNKRK6te',
+  callbackURL: 'http://www-headstartsv-com.us-east-1.elasticbeanstalk.com/auth/naver/callback'
 };
 
 //DB

@@ -144,7 +144,7 @@ router.get('/:bootcampId', function (req, res, next) {
       'Social Event 참여',
       '생활 지원'
     ],
-    price: '$10,000'
+    price: '$0'
   });
 });
 

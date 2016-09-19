@@ -1,9 +1,10 @@
 {
   "name": "www-headstartsv-com",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "install": "bower install"
   },
   "dependencies": {
     "body-parser": "^1.13.3",
