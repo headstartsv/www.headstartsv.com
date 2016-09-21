@@ -41,7 +41,7 @@ config.development.aws =
     config.production.aws = {
       accessKeyId: 'AKIAJ7RCKGY5EBPELPHQ',
       secretAccessKey: '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',
-      region: 'us-west-2'
+      region: 'us-east-1'
 };
 
 //FACEBOOK
