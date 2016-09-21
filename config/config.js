@@ -23,7 +23,7 @@ config.development.app =
 //PORT
 config.development.port =
   config.staging.port =
-    config.production.port = process.env.PORT || 3000;
+    config.production.port = process.env.PORT || 3001;
 
 //HOST
 config.development.host = 'http://localhost';
