@@ -6,8 +6,7 @@ const assert = require('assert')
 
 describe('aws-sns', function () {
   it('should have unit test!', function (done) {
-    assert(true, 'we expected this package author to add actual unit tests.');
-    sns('message again', done);
+    sns.contactInquiry('testuser@test.com', 'message again', done);
   });
 });
 
