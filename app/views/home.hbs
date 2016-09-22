@@ -116,6 +116,22 @@
     display: block;
     margin: auto;
   }
+  .instructor figure {
+    position: relative;
+  }
+  .instructor figure > div {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    left: -20px;
+    top: -20px;
+  }
+  .instructor figure > div:hover {
+    display: block;
+  }
+  .instructor figure > img:hover + div {
+    display: block;
+  }
 </style>
 <!-- BACKGROUND VIDEO FALLBACK -->
 <!--[if lt IE 9]>
@@ -153,7 +169,7 @@
     <figure>
       <img src="img/logo2.png">
     </figure>
-    <h1><b>당신의 미래를 바꿉니다.</b></h1>
+    <h1><b>Meet Your Data Science Expert</b></h1>
     <h3>Headstart는 Data Science에 관한 당신의 커리어 성장을 도울 최적의 프로그램을 제공합니다. 지금, 미래를 바꾸세요.</h3>
   </section>
 </header>
@@ -250,9 +266,11 @@
     <div class="row">
       <figure class="col-md-3">
         <img class="circle" src="img/instructor-01.png" />
+        <div class="LI-profile-badge"  data-version="v1" data-size="medium" data-locale="en_US" data-type="horizontal" data-theme="light" data-vanity="statkwon"><a class="LI-simple-link" href='https://www.linkedin.com/in/statkwon?trk=profile-badge'>Jaimyoung (Jaimie) Kwon</a></div>
       </figure>
       <figure class="col-md-3">
         <img class="circle" src="img/instructor-02.png" />
+        <div class="LI-profile-badge"  data-version="v1" data-size="medium" data-locale="en_US" data-type="horizontal" data-theme="light" data-vanity="jerrid-matthews-609a682"><a class="LI-simple-link" href='https://www.linkedin.com/in/jerrid-matthews-609a682?trk=profile-badge'>Jerrid Matthews</a></div>
       </figure>
       <figure class="col-md-3">
         <img class="circle" src="img/instructor-03.png" />
