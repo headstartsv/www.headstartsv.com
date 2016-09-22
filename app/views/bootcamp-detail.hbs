@@ -2,6 +2,35 @@
   article.bootcamp-detail .container {
     margin: 10px auto 10px auto;
   }
+  article.bootcamp-detail th {
+    border-color: #9DCCBF;
+  }
+  article.bootcamp-detail td {
+    text-align: center;
+    border-color: #9DCCBF;
+  }
+  article.bootcamp-detail img {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    background-color: #cfd8dc;
+    display: block;
+    margin: auto;
+  }
+
+  article.bootcamp-prerequisite {
+    color: #37474f;
+  }
+  article.bootcamp-prerequisite table {
+    margin-top: 10px;
+  }
+  article.bootcamp-prerequisite th {
+    border-color: #ffffff;
+  }
+  article.bootcamp-prerequisite td {
+    text-align: center;
+    border-color: #ffffff;
+  }
 
   article.bootcamp-space img {
     width: 100%;
@@ -45,16 +74,22 @@
 
 {{> body/header-bootcamp}}
 <main>
+  <article class="head dark">
+    <div class="container">
+      <h2>Project Base Bootcamp</h2>
+      <h3>Headstart Bootcamp 에서 제공하는 모든 Project는 현직 Data Scientist 에게 검증받은 실전 지향적 Project 입니다.</h3>
+    </div>
+  </article>
   <article class="bootcamp-detail light">
     <div class="container">
-      <h2 class="left">Bootcamp Details</h2>
+      <h2>Bootcamp Details</h2>
       <table class="default">
         <tr>
           <th>
-            과 정
+            기 간
           </th>
           <td>
-            {{{name}}}
+            {{{campStart}}} ~ {{{campEnd}}}
           </td>
         </tr>
         <tr>
@@ -67,18 +102,18 @@
         </tr>
         <tr>
           <th>
-            기 간
-          </th>
-          <td>
-            {{{campStart}}} ~ {{{campEnd}}}
-          </td>
-        </tr>
-        <tr>
-          <th>
             일 정
           </th>
           <td>
             {{{scheduleBrief}}}
+          </td>
+        </tr>
+        <tr>
+          <th>
+            인 원
+          </th>
+          <td>
+            {{{person}}}
           </td>
         </tr>
         <tr>
@@ -97,35 +132,56 @@
             {{{supplies}}}
           </td>
         </tr>
+        <tr>
+          <td colspan="2" style="border: none;">
+            <h2 class="left">Instructor</h2>
+          </td>
+        </tr>
+        <tr>
+          <th style="border: none;">
+            <img src="{{{instructorPicture}}}" />
+          </th>
+          <td rowspan="2">
+            {{{instructorCareer}}}
+          </td>
+        </tr>
+        <tr>
+          <th style="border: none;">
+            <h3>
+              {{{instructorName}}}
+            </h3>
+          </th>
+        </tr>
       </table>
     </div>
   </article>
-  <div class="container">
-    <hr/>
-  </div>
-  <article class="bootcamp-space light">
+  <article class="bootcamp-prerequisite till">
     <div class="container">
-      <h2 class="left">Bootcamp Space</h2>
-      {{#each bootcampSpacePictures}}
-      <div class="row">
-        <div class="col-md-1"></div>
-        <div class="col-md-4">
-          <img src="{{this.[0]}}"/>
-        </div>
-        <div class="col-md-2"></div>
-        <div class="col-md-4">
-          {{#if this.[1]}}
-            <img src="{{this.[1]}}"/>
-          {{/if}}
-        </div>
-        <div class="col-md-1"></div>
-      </div>
-      {{/each}}
+      <h2 class="left">Prerequisite</h2>
       <ul>
-        {{#each bootcampSpaceDesciption}}
-        <li>{{this}}</li>
-        {{/each}}
+        <li>경력 및 경험</li>
+        <li>사전 요구되는 기술 및 지식</li>
       </ul>
+      {{#each bootcampPrerequisites}}
+        <div class="row">
+          {{#each this}}
+            <div class="col-md-4">
+              <table class="default">
+                <tr>
+                  <th>
+                    {{{this.name}}}
+                  </th>
+                </tr>
+                <tr>
+                  <td>
+                    {{{this.description}}}
+                  </td>
+                </tr>
+              </table>
+            </div>
+          {{/each}}
+        </div>
+      {{/each}}
     </div>
   </article>
   <div class="container">

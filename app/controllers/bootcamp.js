@@ -88,26 +88,36 @@ router.get('/:bootcampId', function (req, res, next) {
 
   res.render('bootcamp-detail', {
     id: bootcampId,
-    name: 'Project 진행 + Feedback Seminar',
+    // name: 'Project 진행 + Feedback Seminar',
     location: '3350 Thomas Rd, Santa Clara, CA, U.S, Headstart SiliconValley',
     campStart: '2016. 12. 28',
     campEnd: '2017. 1. 24',
+    person: 25,
     scheduleBrief: '9:00 A.M ~ 05:00 P.M (주 2회 Project Feedback Seminar)',
     projectList: '산불 예측<br/>자전거 수요 예측<br/>AirBnB Data 를 활용한 여행객 수요 예측<br/>의료 Data 를 활용한 암 진행 정도와 사망 연관성 분석<br/>기타',
     supplies: '개인 노트북',
-    bootcampSpacePictures: [[
-      '/img/background0.jpg',
-      '/img/background1.jpg'
-    ], [
-      '/img/background2.jpg',
-      '/img/background3.jpg'
-    ]],
-    bootcampSpaceDesciption: [
-      'WIFI제공',
-      'Printer, Fax, Copy Machine 사용가능',
-      '탕비실 완비',
-      '주차장'
-    ],
+    instructorPicture: '/img/instructor-01.png',
+    instructorName: '권재명',
+    instructorCareer: '경력사항<br/>Linked In<br/>Blog ...',
+    bootcampPrerequisites: [[{
+      name: 'Project Name 1',
+      description: '프로젝트 목표<br/>사용 언어<br/>소요 기간'
+    }, {
+      name: 'Project Name 2',
+      description: '프로젝트 목표<br/>사용 언어<br/>소요 기간'
+    }, {
+      name: 'Project Name 3 ',
+      description: '프로젝트 목표<br/>사용 언어<br/>소요 기간'
+    }], [{
+      name: 'Project Name 4',
+      description: '프로젝트 목표<br/>사용 언어<br/>소요 기간'
+    }, {
+      name: 'Project Name 5',
+      description: '프로젝트 목표<br/>사용 언어<br/>소요 기간'
+    }, {
+      name: 'Project Name 6',
+      description: '프로젝트 목표<br/>사용 언어<br/>소요 기간'
+    }]],
     projectDescription: [[{
       name: 'Project Name 1',
       description: '프로젝트 목표<br/>사용언어<br/>소요시간'
