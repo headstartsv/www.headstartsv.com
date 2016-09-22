@@ -9,6 +9,9 @@
     text-align: center;
     border-color: #9DCCBF;
   }
+  article.bootcamp-detail li {
+    text-align: left;
+  }
   article.bootcamp-detail img {
     border-radius: 50%;
     width: 120px;
@@ -32,31 +35,33 @@
     border-color: #ffffff;
   }
 
-  article.bootcamp-space img {
+  article.bootcamp-expected-result img {
     width: 100%;
     margin: 10px;
     border: solid 1px;
+    max-height: 200px;
   }
 
-  article.bootcamp-project-description section div {
-    padding: 3px;
-    border: solid 1px;
-    margin: 5px;
-    text-align: center;
+  article.bootcamp-description-chart .wrapper {
+    background-color: #ffffff;
+    color: #37474f;
+    padding: 10px;
+    min-height: 492px;
+    margin-top: 20px;
   }
-  article.bootcamp-project-description section .name {
-    font-weight: 400;
-  }
-  article.bootcamp-project-description section .desc {
-    min-height: 150px;
+  article.bootcamp-description-chart hr {
+    width: 30px;
+    border: none;
+    height: 3px;
+    color: #37474f;
+    background-color: #37474f;
   }
 
-  article.bootcamp-camp-description section {
-    margin: 5px;
-    padding: 5px;
+  article.bootcamp-curriculum .wrapper {
+    padding: 10px;
     border: solid 1px;
-    min-height: 200px;
-    text-align: center;
+    min-height: 250px;
+    margin-top: 10px;
   }
 
   article.bootcamp-price .row {
@@ -142,7 +147,11 @@
             <img src="{{{instructorPicture}}}" />
           </th>
           <td rowspan="2">
-            {{{instructorCareer}}}
+            <ul>
+              {{#each instructorCareer}}
+                <li>{{{this}}}</li>
+              {{/each}}
+            </ul>
           </td>
         </tr>
         <tr>
@@ -159,13 +168,12 @@
     <div class="container">
       <h2 class="left">Prerequisite</h2>
       <ul>
-        <li>경력 및 경험</li>
-        <li>사전 요구되는 기술 및 지식</li>
+        <li>Pre-Couses 과정 수행</li>
       </ul>
       {{#each bootcampPrerequisites}}
         <div class="row">
           {{#each this}}
-            <div class="col-md-4">
+            <div class="col-md-6">
               <table class="default">
                 <tr>
                   <th>
@@ -184,78 +192,66 @@
       {{/each}}
     </div>
   </article>
-  <div class="container">
-    <hr/>
-  </div>
-  <article class="bootcamp-project-description light">
+
+  <article class="bootcamp-description-chart dark">
     <div class="container">
-      <h2 class="left">Project Description</h2>
-      {{#each projectDescription}}
+      <h2>Headstart Project Description Chart</h2>
       <div class="row">
-        <div class="col-md-1"></div>
-        <div class="col-md-4">
-          <section>
-            <div class="name">
-              {{this.[0].name}}
+        {{#each descriptionChart}}
+          <div class="col-md-4">
+            <div class="wrapper">
+              <hr/>
+              <h3>{{this.title}}</h3>
+              <p class="position">Position : {{this.position}}</p>
+              <p class="requirement">{{this.requirement}}</p>
+              <ul>
+                {{#each this.requirementList}}
+                  <li>{{this}}</li>
+                {{/each}}
+              </ul>
             </div>
-            <div class="desc">
-              {{{this.[0].description}}}
-            </div>
-          </section>
-        </div>
-        <div class="col-md-2"></div>
-        <div class="col-md-4">
-        {{#if this.[1]}}
-          <section>
-            <div class="name">
-              {{this.[1].name}}
-            </div>
-            <div class="desc">
-              {{{this.[1].description}}}
-            </div>
-          </section>
-        {{/if}}
-        </div>
-        <div class="col-md-1"></div>
+          </div>
+        {{/each}}
       </div>
-      {{/each}}
+      <h4>Bootcamp 진행 내용과 실제 Job Description 의 매칭 정도를 직접 확인하세요.</h4>
     </div>
   </article>
-  <div class="container">
-    <hr/>
-  </div>
-  <article class="bootcamp-camp-description light">
+
+  <article class="bootcamp-expected-result light">
     <div class="container">
-      <h2 class="left">Bootcamp Description</h2>
-      <p>Bootcamp 진행 내용과 실제 Job Description 의 매칭 정도를 직접 확인하세요.</p>
+      <h2 class="left">
+        Expected Result
+      </h2>
       <div class="row">
-        <div class="col-md-4">
-          {{#if bootcampDescription.[0]}}
-          <section>
-            {{{bootcampDescription.[0]}}}
-          </section>
-          {{/if}}
-        </div>
-        <div class="col-md-4">
-          {{#if bootcampDescription.[1]}}
-          <section>
-            {{{bootcampDescription.[1]}}}
-          </section>
-          {{/if}}
-        </div>
-        <div class="col-md-4">
-          {{#if bootcampDescription.[2]}}
-          <section>
-            {{{bootcampDescription.[2]}}}
-          </section>
-          {{/if}}
-        </div>
+        {{#each expectedResult}}
+          <div class="col-md-4">
+            <img src="{{this}}" />
+          </div>
+        {{/each}}
       </div>
     </div>
   </article>
-  <!--<div class="container">-->
-    <!--<hr/>-->
-  <!--</div>-->
+
+  <article class="bootcamp-curriculum light">
+    <div class="container">
+      <h2>Bootcamp Curriculum & Schedule</h2>
+      <div class="row">
+        {{#each curriculum}}
+          <div class="col-md-3">
+            <div class="wrapper">
+              <h3>{{this.title}}</h3>
+              <h4>{{this.subTitle}}</h4>
+              <p class="item">
+                {{{this.item}}}
+              </p>
+            </div>
+          </div>
+        {{/each}}
+      </div>
+      참여자 역할 및 특이 요청 사항 : P.L, Domain 전문가, 발표자, 분석가
+    </div>
+  </article>
+
   <article class="bootcamp-price dark">
     <div class="container">
       <h2 class="left">Bootcamp Description</h2>
@@ -281,9 +277,7 @@
       </div>
     </div>
   </article>
-  <!--<div class="container">-->
-    <!--<hr/>-->
-  <!--</div>-->
+
   <article class="dark">
     <a href="/bootcamp/{{id}}/apply"><button class="btn btn-default btn-large">Apply Now</button></a>
   </article>

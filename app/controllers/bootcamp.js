@@ -88,54 +88,111 @@ router.get('/:bootcampId', function (req, res, next) {
 
   res.render('bootcamp-detail', {
     id: bootcampId,
-    // name: 'Project 진행 + Feedback Seminar',
     location: '3350 Thomas Rd, Santa Clara, CA, U.S, Headstart SiliconValley',
     campStart: '2016. 12. 28',
     campEnd: '2017. 1. 24',
     person: 25,
     scheduleBrief: '9:00 A.M ~ 05:00 P.M (주 2회 Project Feedback Seminar)',
-    projectList: '산불 예측<br/>자전거 수요 예측<br/>AirBnB Data 를 활용한 여행객 수요 예측<br/>의료 Data 를 활용한 암 진행 정도와 사망 연관성 분석<br/>기타',
+    projectList: '스팸 이메일 분류<br/>부동산 가격 예측<br/>은행 자료 시각화<br/>Gapminder 자료 시각화<br/>셰익스티어 희곡 Word Cloud 시각화',
     supplies: '개인 노트북',
     instructorPicture: '/img/instructor-01.png',
     instructorName: '권재명',
-    instructorCareer: '경력사항<br/>Linked In<br/>Blog ...',
+    instructorCareer: [
+      'UC Berkeley 통계학 박사 (1996 ~ 2000)',
+      'UC Berkeley ITS (Institute of Transportation Studies) 연구원 ( 2000 ~ 2004)',
+      'California State University, East Bay 통계학과 조교수 (2004 ~ 2009)',
+      'Data Science Manager AOL Advertising (2009 ~ 2015)',
+      'Silicon Valley "A Company" Senior Data Scientist (2015~)'
+    ],
     bootcampPrerequisites: [[{
-      name: 'Project Name 1',
-      description: '프로젝트 목표<br/>사용 언어<br/>소요 기간'
+      name: 'Spam e-mail',
+      description: '스팸 메일 분류 분석<br/>사용 언어 : R<br/>소요 기간 : 4일'
     }, {
-      name: 'Project Name 2',
-      description: '프로젝트 목표<br/>사용 언어<br/>소요 기간'
-    }, {
-      name: 'Project Name 3 ',
-      description: '프로젝트 목표<br/>사용 언어<br/>소요 기간'
+      name: 'Real-Estimate',
+      description: '부동산 가격 예측<br/>사용 언어 : R<br/>소요 시간 : 4일'
     }], [{
-      name: 'Project Name 4',
-      description: '프로젝트 목표<br/>사용 언어<br/>소요 기간'
+      name: 'Word Cloud',
+      description: '셰익스피어 희곡 시각화<br/>사용 언어 : R<br/>소요 기간 : 4시간'
     }, {
-      name: 'Project Name 5',
-      description: '프로젝트 목표<br/>사용 언어<br/>소요 기간'
-    }, {
-      name: 'Project Name 6',
-      description: '프로젝트 목표<br/>사용 언어<br/>소요 기간'
+      name: 'World Bank',
+      description: '세계 은행 자료 시각화<br/>사용 언어 : R<br/>소요 시간 : 1일'
     }]],
-    projectDescription: [[{
-      name: 'Project Name 1',
-      description: '프로젝트 목표<br/>사용언어<br/>소요시간'
+    descriptionChart: [{
+      title: 'Headstart',
+      position: 'Data Scientist',
+      requirement: 'What you would get after bootcamp',
+      requirementList: [
+        'Experience with statistical modelling / machine learning',
+        'understanding of relevant statistical measures such as confidence intervals, significance of error measurements, development and evaluation data sets',
+        'Experience working with statistical packages R',
+        'Experience analyzing data related to daily functions',
+        'Deep interest and aptitude in data, metrics, analysis and trends, and applied knowledge of measurement, statistics and program evaluation'
+      ]
     }, {
-      name: 'Project Name 2',
-      description: '프로젝트 목표<br/>사용언어<br/>소요시간'
-    }], [{
-      name: 'Project Name 3',
-      description: '프로젝트 목표<br/>사용언어<br/>소요시간'
+      title: 'Amazon',
+      position: 'Data Analysist',
+      requirement: 'Requirements',
+      requirementList: [
+        'Bachelor’s or Master’s degree in a relevant field',
+        'Experience in Perl, Python, or another scripting language; command line usage',
+        'Track record of diving into data to discover hidden patterns and of conducting error/deviation analysis',
+        'Experience with statistical modelling / machine learning',
+        'understanding of relevant statistical measures such as confidence intervals, significance of error measurements, development and evaluation data sets, etc'
+      ]
     }, {
-      name: 'Project Name 4',
-      description: '프로젝트 목표<br/>사용언어<br/>소요시간'
-    }]],
+      title: 'Google',
+      position: 'Data Scientist',
+      requirement: 'Requirements',
+      requirementList: [
+        'BA/BS degree or equivalent practical experience.',
+        'Experience working with statistical packages (e.g., R, SAS, Stata, MATLAB, etc).',
+        'Experience analyzing data related to daily functions of an IT organization (e.g. incident ticket volume, ticket response and resolution time, spend, customer satisfaction).',
+        'Deep interest and aptitude in data, metrics, analysis and trends, and applied knowledge of measurement, statistics and program evaluation'
+      ]
+    }],
+    expectedResult: [
+      '/img/bootcamp-result-1.png',
+      '/img/bootcamp-result-2.png',
+      '/img/bootcamp-result-3.png'
+    ],
     bootcampDescription: [
       'HeadStart SV<br/>Bootcamp<br/>Description',
       'Job Description<br/>(Glassdoor)',
       'Job Description<br/>(Monster)'
     ],
+    curriculum: [{
+      title: '1주차',
+      subTitle: 'R, dplyr 을 이용한 자료처리',
+      item: 'R 분석 코드 기초<br/>Gapminder, Flight 자료 분석<br/>Gapminder, Flight 자료 시각화'
+    }, {
+      title: '2주차',
+      subTitle: '분석 기법',
+      item: '통계 개념 학습<br/>가설검정과 신뢰구간<br/>범주형/수량형 변수<br/>5 가지 자료 종류 조합 및 분석'
+    }, {
+      title: '3주차',
+      subTitle: '빅 데이터 분류 분석 1',
+      item: '분류분석 개념<br/>정확도 지표<br/>모형의 복잡도<br/>모형 평가'
+    }, {
+      title: '4주차',
+      subTitle: '빅 데이터 분류 분석 2',
+      item: '로지스틱 회귀분석<br/>라쏘 모형과 Glmnet<br/>나무모형<br/>랜덤 포레스트<br/>부스팅'
+    }, {
+      title: '5주차',
+      subTitle: '빅데이터 회귀분석 1',
+      item: '회귀분석 개념<br/>정확도 지표<br/>모형의 복잡도<br/>모형 평가'
+    }, {
+      title: '6주차',
+      subTitle: '빅데이터 회귀분석 2',
+      item: '선형 회귀분석 및 변수 선택<br/>라쏘 모형과 Glmnet<br/>나무 모형<br/>랜덤 포레스트<br/>부스팅'
+    }, {
+      title: '7주차',
+      subTitle: '공간자료 시각화',
+      item: '공간자료 처리<br/>라이브러리<br/>ggplot 2 maps<br/>Leaflet'
+    }, {
+      title: '8주차',
+      subTitle: '텍스트자료 시각화',
+      item: '텍스트 자료<br/>자연어 처리 기본개념<br/>단어구름 (Word Cloud)'
+    }],
     schedule: [
       '4주 (월요일 ~ 금요일)',
       '9 am ~ 5 pm',
