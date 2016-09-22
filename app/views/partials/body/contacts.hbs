@@ -9,6 +9,94 @@
     padding: 10px 0px 10px 0px;
   }
 </style>
+<script>
+  $(function () {
+    var waitingDialog = waitingDialog || (function ($) {
+      'use strict';
+
+      // Creating modal dialog's DOM
+      var $dialog = $(
+              '<div class="modal fade" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true" style="padding-top:15%; overflow-y:visible;">' +
+              '<div class="modal-dialog modal-m">' +
+              '<div class="modal-content">' +
+              '<div class="modal-header"><h3 style="margin:0;"></h3></div>' +
+              '<div class="modal-body">' +
+              '<div class="progress progress-striped active" style="margin-bottom:0;"><div class="progress-bar" style="width: 100%"></div></div>' +
+              '</div>' +
+              '</div></div></div>');
+
+      return {
+        /**
+         * Opens our dialog
+         * @param message Custom message
+         * @param options Custom options:
+         * 				  options.dialogSize - bootstrap postfix for dialog size, e.g. "sm", "m";
+         * 				  options.progressType - bootstrap postfix for progress bar type, e.g. "success", "warning".
+         */
+        show: function (message, options) {
+          // Assigning defaults
+          if (typeof options === 'undefined') {
+            options = {};
+          }
+          if (typeof message === 'undefined') {
+            message = 'Loading';
+          }
+          var settings = $.extend({
+            dialogSize: 'm',
+            progressType: '',
+            onHide: null // This callback runs after the dialog was hidden
+          }, options);
+
+          // Configuring dialog
+          $dialog.find('.modal-dialog').attr('class', 'modal-dialog').addClass('modal-' + settings.dialogSize);
+          $dialog.find('.progress-bar').attr('class', 'progress-bar');
+          if (settings.progressType) {
+            $dialog.find('.progress-bar').addClass('progress-bar-' + settings.progressType);
+          }
+          $dialog.find('h3').text(message);
+          // Adding callbacks
+          if (typeof settings.onHide === 'function') {
+            $dialog.off('hidden.bs.modal').on('hidden.bs.modal', function (e) {
+              settings.onHide.call($dialog);
+            });
+          }
+          // Opening dialog
+          $dialog.modal();
+        },
+        /**
+         * Closes dialog
+         */
+        hide: function () {
+          $dialog.modal('hide');
+        }
+      };
+
+    })(jQuery);
+
+    $('#contactInquiryForm').validator().on('submit', function (e) {
+      if (e.isDefaultPrevented()) {
+        alert('이메일 혹은 문의사항이 없거나 잘못되었습니다.');
+        return false;
+      }
+
+      waitingDialog.show('이메일을 보내고 있습니다.', {dialogSize: 'sm', progressType: 'warning'});
+      $.post('/api/contact-inquiry', {
+        email: $('#inquiryEmail').val()
+        , message: $('#inquiryMessage').val()
+      }, function(res) {
+        waitingDialog.hide();
+        if (res.result !== 0) {
+          alert('이메일이 전송 실패하였습니다.\n' + res.message);
+          return;
+        }
+        $('#inquiryEmail').val('');
+        $('#inquiryMessage').val('');
+        alert('이메일이 전송 되었습니다.\n담당자 확인 후 연락 드리겠습니다.');
+      }, "json");
+      return false;
+    });
+  });
+</script>
 
 <!-- CONTACTS -->
 <article id="contacts" class="contacts dark">
@@ -23,17 +111,19 @@
         </span>
     </section>
     <section class="col-md-7">
-      <div class="input-group">
-        <span class="input-group-addon" id="basic-addon3">email</span>
-        <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" placeholder="연락 받으실 이메일">
-      </div>
-      <div class="input-group">
-        <span class="input-group-addon" id="basic-addon4">message</span>
-        <textarea class="form-control" id="basic-url2" aria-describedby="basic-addon4" rows="5" placeholder="문의 사항을 적어주세요"></textarea>
-      </div>
-      <div>
-        <button class="btn btn-default">SEND</button>
-      </div>
+      <form id="contactInquiryForm">
+        <div class="input-group">
+          <span class="input-group-addon" id="inquiryEmailTitle">email</span>
+          <input type="email" class="form-control" id="inquiryEmail" aria-describedby="inquiryEmailTitle" required="true" placeholder="연락 받으실 이메일">
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon" id="inquiryMessageTitle">message</span>
+          <textarea class="form-control" id="inquiryMessage" aria-describedby="inquiryMessageTitle" rows="5" required="true" data-minlength="10" placeholder="문의 사항을 적어주세요"></textarea>
+        </div>
+        <div>
+          <button id="sendInquiry" type="submit" class="btn btn-default">SEND</button>
+        </div>
+      </form>
     </section>
   </div>
 </article>
