@@ -26,9 +26,9 @@ config.development.port =
     config.production.port = process.env.PORT || 3001;
 
 //HOST
-config.development.host = 'http://localhost';
-config.staging.host = 'http://dev.headstartsv.com';
-config.production.host = 'http://www.headstartsv.com';
+config.development.host =
+  config.staging.host =
+  config.production.host = process.env.HEADSTART_ENV_HOST;
 
 //ENV
 config.development.env =
@@ -38,46 +38,47 @@ config.development.env =
 //AWS
 config.development.aws =
   config.staging.aws =
-    config.production.aws = {
-      accessKeyId: 'AKIAJ7RCKGY5EBPELPHQ',
-      secretAccessKey: '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',
-      region: 'us-east-1'
+  config.production.aws = {
+    accessKeyId: process.env.HEADSTART_ENV_AWS_ACCESSKEYID,
+    secretAccessKey: process.env.HEADSTART_ENV_AWS_SECRETACCESSKEY,
+    region: process.env.HEADSTART_ENV_AWS_REGION,
+    snsArn: process.env.HEADSTART_ENV_AWS_SNS_ARN
 };
 
 //FACEBOOK
-config.development.facebook =
-  config.staging.facebook =
-    config.production.facebook = {
-      clientID: 'S0I1f6STn3vBTb0lQ1hu',
-      clientSecret: 'vWLgAuXgc1',
-      callbackURL: "http://localhost:3000/auth/facebook/callback"
+config.development.facebook = {
+  clientID: process.env.HEADSTART_ENV_FB_ID,
+  clientSecret: process.env.HEADSTART_ENV_FB_SECRET,
+  callbackURL: config[env].host + ':' + config[env].port + '/auth/facebook/callback'
+};
+config.staging.facebook =
+  config.production.facebook = {
+  clientID: process.env.HEADSTART_ENV_FB_ID,
+  clientSecret: process.env.HEADSTART_ENV_FB_SECRET,
+  callbackURL: config[env].host + '/auth/facebook/callback'
 };
 
 //NAVER
 config.development.naver = {
-  clientID: 'S0I1f6STn3vBTb0lQ1hu',
-  clientSecret: 'vWLgAuXgc1',
-  callbackURL: 'http://localhost:3000/auth/naver/callback'
+  clientID: process.env.HEADSTART_ENV_NAVER_ID,
+  clientSecret: process.env.HEADSTART_ENV_NAVER_SECRET,
+  callbackURL: config[env].host + ':' + config[env].port + '/auth/naver/callback'
 };
-config.staging.naver = {
-  clientID: 'S0I1f6STn3vBTb0lQ1hu',
-  clientSecret: 'vWLgAuXgc1',
-  callbackURL: 'http://localhost:3000/auth/naver/callback'
-}
-config.production.naver = {
-  clientID: 'b_V1ta71LrxKVBMWMGUF',
-  clientSecret: 'KIoNKRK6te',
-  callbackURL: 'http://www-headstartsv-com.us-east-1.elasticbeanstalk.com/auth/naver/callback'
+config.staging.naver =
+  config.production.naver = {
+  clientID: process.env.HEADSTART_ENV_NAVER_ID,
+  clientSecret: process.env.HEADSTART_ENV_NAVER_SECRET,
+  callbackURL: config[env].host + '/auth/naver/callback'
 };
 
 //DB
 config.development.db =
   config.staging.db =
-    config.production.db = {
-      create: env !== 'production',
-      waitForActive: true,
-      waitForActiveTimeout: 180000,
-      prefix: env + '-'
+  config.production.db = {
+    create: env !== 'production',
+    waitForActive: true,
+    waitForActiveTimeout: 180000,
+    prefix: env + '-'
 };
 
 module.exports = config[env];
