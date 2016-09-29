@@ -93,7 +93,7 @@ router.get('/:bootcampId', function (req, res, next) {
     campEnd: '2017. 1. 24',
     person: 25,
     scheduleBrief: '9:00 A.M ~ 05:00 P.M (주 2회 Project Feedback Seminar)',
-    projectList: '스팸 이메일 분류<br/>부동산 가격 예측<br/>은행 자료 시각화<br/>Gapminder 자료 시각화<br/>셰익스티어 희곡 Word Cloud 시각화',
+    projectList: '스팸 이메일 분류<br/>부동산 가격 예측<br/>세계 은행 자료 시각화<br/>Gapminder 자료 시각화<br/>셰익스티어 희곡 Word Cloud 시각화',
     supplies: '개인 노트북',
     instructorPicture: '/img/instructor-01.png',
     instructorName: '권재명',
@@ -102,19 +102,19 @@ router.get('/:bootcampId', function (req, res, next) {
       'UC Berkeley ITS (Institute of Transportation Studies) 연구원 ( 2000 ~ 2004)',
       'California State University, East Bay 통계학과 조교수 (2004 ~ 2009)',
       'Data Science Manager AOL Advertising (2009 ~ 2015)',
-      'Silicon Valley "A Company" Senior Data Scientist (2015~)'
+      'Silicon Valley Senior Data Scientist (2015~)'
     ],
     bootcampPrerequisites: [[{
-      name: 'Spam e-mail',
+      name: '분류분석',
       description: '스팸 메일 분류 분석<br/>사용 언어 : R<br/>소요 기간 : 4일'
     }, {
-      name: 'Real-Estimate',
+      name: '회귀분석',
       description: '부동산 가격 예측<br/>사용 언어 : R<br/>소요 시간 : 4일'
     }], [{
-      name: 'Word Cloud',
+      name: '텍스트 자료 시각화',
       description: '셰익스피어 희곡 시각화<br/>사용 언어 : R<br/>소요 기간 : 4시간'
     }, {
-      name: 'World Bank',
+      name: '공간 자료 시각화',
       description: '세계 은행 자료 시각화<br/>사용 언어 : R<br/>소요 시간 : 1일'
     }]],
     descriptionChart: [{
@@ -167,7 +167,7 @@ router.get('/:bootcampId', function (req, res, next) {
     }, {
       title: '2주차',
       subTitle: '분석 기법',
-      item: '통계 개념 학습<br/>가설검정과 신뢰구간<br/>범주형/수량형 변수<br/>5 가지 자료 종류 조합 및 분석'
+      item: '통계 개념 학습<br/>가설검정과 신뢰구간<br/>범주형/수량형 변수<br/>5가지 변수 종류에 대한 분석'
     }, {
       title: '3주차',
       subTitle: '빅 데이터 분류 분석 1',
@@ -187,7 +187,7 @@ router.get('/:bootcampId', function (req, res, next) {
     }, {
       title: '7주차',
       subTitle: '공간자료 시각화',
-      item: '공간자료 처리<br/>라이브러리<br/>ggplot 2 maps<br/>Leaflet'
+      item: '공간자료 처리<br/>라이브러리<br/>ggplot2 maps<br/>Leaflet'
     }, {
       title: '8주차',
       subTitle: '텍스트자료 시각화',
