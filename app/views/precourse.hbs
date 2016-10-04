@@ -2,16 +2,32 @@
   article.syllabus .container {
     margin: 10px auto 10px auto;
   }
+  article.syllabus table {
+    margin: 0px 20px 0px 20px;
+  }
+  article.download p {
+    text-align: center;
+  }
+  article.goal .box {
+    padding: 20px;
+  }
+  article.target .box {
+    padding: 20px;
+  }
+  article.feature .box {
+    padding: 20px;
+    height: auto;
+  }
 </style>
 
 {{> body/header-precourse}}
 <main class="precourse">
   <article class="download dark">
     <div class="container">
-      <h2 class="left">Pre-Courses Tool Install</h2>
+      <h2>Pre-Courses Tool Install</h2>
       <p>
-        본 프로그램은 과제를 전달받기 위한 프로그램입니다.
-        코딩에 소요된 시간을 기록하고, 사용자가 사용할 수 있는 언어와 활용 정도를
+        본 프로그램은 과제를 전달받기 위한 프로그램입니다.<br/>
+        코딩에 소요된 시간을 기록하고, 사용자가 사용할 수 있는 언어와 활용 정도를<br/>
         한눈에 확인할 수 있도록 도표를 제공는 개발자를 위한 Tool 입니다.
       </p>
       <a href="http://code.rpgify.com">
@@ -119,7 +135,7 @@
       <div class="row">
         <section class="col-md-3">
           <div class="box tall">
-            <img src="/img/mock.png"/>
+            <img src="/img/precourse_target.png"/>
             <p>
               어떻게 Data Science 를 시작해야 할지 고민하고 있는 사람들을 위한 Data Science 입문코스
             </p>
@@ -127,7 +143,7 @@
         </section>
         <section class="col-md-3">
           <div class="box tall">
-            <img src="/img/mock.png"/>
+            <img src="/img/precourse_target.png"/>
             <p>
               통계학의 기초를 이해하고, Data Science 의 개념과 R 의 기본적인 활용 방법 제시
             </p>
@@ -135,7 +151,7 @@
         </section>
         <section class="col-md-3">
           <div class="box tall">
-            <img src="/img/mock.png"/>
+            <img src="/img/precourse_target.png"/>
             <p>
               Data 의 기본 구조를 이해하고, Data 종류에 따른 분석 방법을 스스로 판단할 수 있음
             </p>
@@ -143,7 +159,7 @@
         </section>
         <section class="col-md-3">
           <div class="box tall">
-            <img src="/img/mock.png"/>
+            <img src="/img/precourse_target.png"/>
             <p>
               Bootcamp 에 참여할 수 있도록 Project 를 스스로 수행 할 수 있는 Limitation 제공
             </p>
@@ -158,34 +174,34 @@
       <div class="row">
         <div class="col-md-4">
           <div class="box tall">
-            <img src="/img/mock.png"/>
+            <img src="/img/precourse_desktop.png"/>
             <h4>
               Bootcamp 참가 희망자
             </h4>
             <p>
-              Headstart는 미국IT 기업의 업무진행방식을 직접 경험할 수 있는 Project를 통한 실습 및 인턴쉽을 제공하며 현장실습교과목을 통한 학점인정이 가능합니다. Headstart는 실제 업무에 사용되는 프로그래밍 역량을 강화하고 취업에 필요한 데이터 포트폴리오를 완성하여 취업까지 이어질 수 있도록 지원해 드립니다.
+              Headstart 에서는 Data Science Bootcamp 를 운영하고 있습니다. 초보자도 Bootcamp 에 참여할 수 있도록 기본적인의 지식을 Pre-Courses를 통해 익히세요.
             </p>
           </div>
         </div>
         <div class="col-md-4">
           <div class="box tall">
-            <img src="/img/mock.png"/>
+            <img src="/img/precourse_presentation.png"/>
             <h4>
               데이터 분야 취업 희망자
             </h4>
             <p>
-              현업에서 업무역량을 키우고 싶으신 분, 데이터분석가로 커리어 전환하고 싶으신 분, 효율적인 데이터 분석과 실무적용을 위해 Data Science에 대한 Project를 진행합니다. Data Scientist로의 지름길을 찾아 가는데 Headstart 가 함께하겠습니다.
+              Pre-Courses 에서 제공하는 과제를 통하여 R 을 활용한 코딩을 수행할 수 있고, 데이터를 시각화할 수 있습니다. Data Scientist 로의 첫걸음에 Headstart 가 함께합니다.
             </p>
           </div>
         </div>
         <div class="col-md-4">
           <div class="box tall">
-            <img src="/img/mock.png"/>
+            <img src="/img/precourse_shuffle.png"/>
             <h4>
               데이터 분야 커리어 전환
             </h4>
             <p>
-              Headstart는 실제 미국 IT기업이 데이터를 분석하는 방법과 데이터 활용사례를 기반으로 차별화된 Data Science 관련 사내 교육을 진행합니다. 무수한 데이터 속 올바른 결정을 내리기 힘든 경우, HEADSTART와의 아웃소싱을 통해 최상의 결과를 만들어보십시오.
+              도메인 전문가는 Data Science 를 활용하여 업무를 더욱 효율적으로 진행할 수 있으며, 더 높은 부가가치를 창출할 수 있습니다. Excel 에서 벗어나 R 을 활용하여 데이터 속 숨은 가치를 발견하세요.
             </p>
           </div>
         </div>
@@ -198,7 +214,7 @@
       <div class="row">
         <div class="col-md-6">
           <div class="box wide border">
-            <img src="/img/mock.png"/>
+            <!--<img src="/img/mock.png"/>-->
             <b>
               Qualified Curriculum
             </b>
@@ -209,7 +225,7 @@
         </div>
         <div class="col-md-6">
           <div class="box wide border">
-            <img src="/img/mock.png"/>
+            <!--<img src="/img/mock.png"/>-->
             <b>
               Essencial Configuration
             </b>
@@ -222,7 +238,7 @@
       <div class="row">
         <div class="col-md-6">
           <div class="box wide border">
-            <img src="/img/mock.png"/>
+            <!--<img src="/img/mock.png"/>-->
             <b>
               스스로 학습 기반
             </b>
@@ -233,7 +249,7 @@
         </div>
         <div class="col-md-6">
           <div class="box wide border">
-            <img src="/img/mock.png"/>
+            <!--<img src="/img/mock.png"/>-->
             <b>
               Free & Self
             </b>
@@ -246,7 +262,7 @@
       <div class="row">
         <div class="col-md-6">
           <div class="box wide border">
-            <img src="/img/mock.png"/>
+            <!--<img src="/img/mock.png"/>-->
             <b>
               1:1 Q&A
             </b>
@@ -257,7 +273,7 @@
         </div>
         <div class="col-md-6">
           <div class="box wide border">
-            <img src="/img/mock.png"/>
+            <!--<img src="/img/mock.png"/>-->
             <b>
               Real Industry
             </b>
@@ -270,7 +286,7 @@
       <div class="row">
         <div class="col-md-6">
           <div class="box wide border">
-            <img src="/img/mock.png"/>
+            <!--<img src="/img/mock.png"/>-->
             <b>
               Basic Statistics
             </b>
@@ -281,7 +297,7 @@
         </div>
         <div class="col-md-6">
           <div class="box wide border">
-            <img src="/img/mock.png"/>
+            <!--<img src="/img/mock.png"/>-->
             <b>
               Basic R Code
             </b>
